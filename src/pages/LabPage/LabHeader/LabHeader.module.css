@@ -34,7 +34,7 @@
 .nav__container {
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 5px;
   padding: 4px 8px;
   overflow-x: auto;
   white-space: nowrap;
@@ -62,7 +62,7 @@
 
 .label {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 20px;
   text-align: center;
   cursor: pointer;
   color: var(--text-primary);
