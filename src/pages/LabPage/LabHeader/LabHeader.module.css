@@ -20,11 +20,8 @@
   align-items: center;
   border-radius: 9999px;
   cursor: pointer;
-
-  & span {
-    color: var(--text-primary);
-    transition: var(--hover-transition);
-  }
+  color: var(--text-primary);
+  transition: var(--hover-transition);
 
   &:hover {
     background-color: var(--control-bg);

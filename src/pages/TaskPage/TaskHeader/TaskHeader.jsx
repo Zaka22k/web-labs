@@ -54,6 +54,7 @@ const TaskHeader = ({ lab }) => {
             animate={{
               maxHeight: open ? "500px" : "0px",
               opacity: open ? 1 : 0,
+              minWidth: open ? "250px" : "125px",
             }}
             transition={{
               duration: 0.25,

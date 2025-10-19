@@ -37,11 +37,12 @@
   cursor: pointer;
   padding: 0;
   overflow: hidden;
-  width: 200px;
 }
 
 .nav__currentTask {
   display: flex;
+  flex-direction: row;
+  gap: 10px;
   align-items: center;
   color: var(--text-primary);
   justify-content: center;

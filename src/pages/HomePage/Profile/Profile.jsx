@@ -9,7 +9,7 @@ const Profile = ({ fullname, group, update_at }) => {
         <br />
         <span className={styles.profile__group}>{group}</span>
         <br />
-        <a href="/labs/1/tasks/10/">Задание 10</a>
+        <a href="/labs/1/tasks/10/">Задание 10 ⟶</a>
       </div>
       <div className={styles.profile__update_at}>
         Дата обновления: {update_at}
