@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  gap: 5px;
+  z-index: 10;
+  background-color: var(--header-bg);
+  padding: 0 16px;
+  backdrop-filter: blur(14px);
+  height: 48px;
+  align-items: center;
+}
+
+.home {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  cursor: pointer;
+
+  & span {
+    color: var(--text-primary);
+    transition: var(--hover-transition);
+  }
+
+  &:hover {
+    background-color: var(--control-bg);
+  }
+}
+
+.nav__container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 4px 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  justify-content: flex-start;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.option {
+  flex: 1;
+}
+
+.input[type="radio"] {
+  display: none;
+
+  &:checked + .label {
+    background-color: var(--control-hover);
+    color: var(--accent-primary);
+    font-weight: 600;
+  }
+}
+
+.label {
+  display: block;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  border-radius: 9999px;
+  transition: var(--hover-transition);
+
+  &:hover {
+    background-color: var(--control-bg);
+  }
+}

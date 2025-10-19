@@ -1,0 +1,27 @@
+.scores__container {
+  grid-area: score;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-primary);
+  gap: 20px;
+}
+
+.scores__title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.scores__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 22px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,26 @@
+.labs_item {
+  text-decoration: none;
+  transition: var(--hover-transition);
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--control-bg);
+  }
+}
+
+.labs_item__title {
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.labs_item__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}

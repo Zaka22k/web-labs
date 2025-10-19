@@ -1,0 +1,10 @@
+.bg {
+  stroke: var(--control-hover);
+  fill: none;
+}
+
+.progress {
+  stroke: var(--accent-primary);
+  fill: none;
+  stroke-linecap: round;
+}

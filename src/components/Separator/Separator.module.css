@@ -1,0 +1,6 @@
+.separator {
+  background-color: var(--separator);
+  width: 95%;
+  height: 1px;
+  align-self: center;
+}

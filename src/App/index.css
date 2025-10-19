@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --bg: linear-gradient(64deg, #0f0f0f, #1e1e1f 45%, #323235 80%);
+  --bg-image: url("assets/wallpaper_dark.svg");
+  --header-bg: rgba(56, 56, 61, 0.6);
+
+  --shadow: 17px 20px 40px rgba(0, 0, 0, 0.65);
+
+  --surface-bg: rgba(49, 49, 49, 0.6);
+  --surface-stroke: rgba(95, 95, 95, 0.6);
+
+  --accent-primary: rgb(38, 185, 255);
+
+  --separator: rgba(118, 118, 128, 0.35);
+
+  --control-bg: rgba(80, 80, 80, 0.6);
+  --control-hover: rgba(99, 99, 102, 0.6);
+
+  --text-primary: rgb(245, 245, 245);
+  --text-secondary: hsla(0, 0%, 100%, 0.66);
+  --text-inverted: rgba(0, 0, 0, 0.88);
+
+  --hover-transition: all 167ms cubic-bezier(0, 0, 0, 1);
+
+  --c-glass: #bbbbbc;
+  --c-light: #fff;
+  --c-dark: #000;
+  --glass-reflex-dark: 2;
+  --glass-reflex-light: 0.3;
+  --shadow2: inset 0 0 0 1px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 10%),
+        transparent
+      ),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+        transparent
+      ),
+    inset -1.5px 2.5px 0px -2px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+        transparent
+      ),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark)
+          calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 1px 5px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 6px 16px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+        transparent
+      );
+}

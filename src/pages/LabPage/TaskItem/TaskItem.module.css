@@ -1,0 +1,17 @@
+.task_item {
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: var(--hover-transition);
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 18px;
+
+  &:hover {
+    background-color: var(--control-bg);
+  }
+}
