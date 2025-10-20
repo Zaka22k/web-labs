@@ -1,20 +1,15 @@
 import { Outlet, useParams } from "react-router-dom";
 import TaskHeader from "./TaskHeader";
 import styles from "./TaskPage.module.css";
-import { useState, useEffect } from "react";
 import PageTransition from "components/PageTransition";
+import { useData } from "context/DataContext";
 
 const TaskPage = () => {
   const { labId, taskId } = useParams();
-  const [lab, setLab] = useState(null);
+  const { data } = useData();
 
-  useEffect(() => {
-    const saved = sessionStorage.getItem("labsData");
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      setLab(parsed.find((l) => l.lab_id === Number(labId)));
-    }
-  }, [labId]);
+  const labs = data?.labs || [];
+  const lab = labs.find((l) => l.lab_id === Number(labId));
 
   if (!lab) return null;
 

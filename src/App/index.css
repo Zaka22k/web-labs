@@ -21,7 +21,7 @@ body {
   --surface-bg: rgba(49, 49, 49, 0.6);
   --surface-stroke: rgba(95, 95, 95, 0.6);
 
-  --accent-primary: #009aff;
+  --accent-primary: rgb(24, 174, 254);
 
   --separator: rgba(118, 118, 128, 0.35);
 
