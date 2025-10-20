@@ -1,7 +1,8 @@
-import { lazy, Suspense, useMemo } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route, useLocation, useMatch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "components/PageTransition";
+import LoadState from "components/LoadState";
 
 const HomePage = lazy(() => import("pages/HomePage"));
 const LabPage = lazy(() => import("pages/LabPage/LabPage"));
@@ -15,7 +16,7 @@ const AppRouter = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LoadState />}>
         <Routes
           location={location}
           key={isTaskRoute ? "lab-inner" : location.pathname}

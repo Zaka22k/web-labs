@@ -2,15 +2,14 @@ import styles from "./HomeMain.module.css";
 import Profile from "../Profile/Profile";
 import Scores from "../Scores/Scores";
 import LabsList from "../LabsList/LabsList";
+import LoadState from "components/LoadState";
 import { useData } from "context/DataContext";
 import React from "react";
 
 const HomeMain = React.memo(() => {
-  const { data, loading } = useData();
+  const { data } = useData();
 
-  if (loading) return <main className={styles.mainLoad}>Загрузка...</main>;
-  if (!data)
-    return <main className={styles.mainLoad}>Ошибка загрузки данных</main>;
+  if (!data) return <LoadState />;
 
   return (
     <main className={styles.main}>
