@@ -5,7 +5,9 @@ import Separator from "components/Separator";
 import React from "react";
 import CircularProgress from "components/CircularProgress";
 
-const LabsList = ({ labs }) => {
+const LabsList = (props) => {
+  const { labs } = props;
+
   return (
     <Card className={styles.labs__container}>
       <div className={styles.labs__title}>

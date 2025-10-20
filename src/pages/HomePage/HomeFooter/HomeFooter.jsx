@@ -1,6 +1,8 @@
 import styles from "./HomeFooter.module.css";
 
-const HomeFooter = ({ title }) => {
+const HomeFooter = (props) => {
+  const { title } = props;
+
   return <footer className={styles.footer}>{title}</footer>;
 };
 

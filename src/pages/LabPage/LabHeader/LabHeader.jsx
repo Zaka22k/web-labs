@@ -3,7 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import styles from "./LabHeader.module.css";
 import Icon from "components/Icon";
 
-const LabHeader = ({ data }) => {
+const LabHeader = (props) => {
+  const { data } = props;
   const { labId } = useParams();
   const navigate = useNavigate();
   const containerRef = useRef(null);

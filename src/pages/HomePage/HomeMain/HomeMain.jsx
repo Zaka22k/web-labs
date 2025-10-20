@@ -15,12 +15,11 @@ const HomeMain = React.memo(() => {
   return (
     <main className={styles.main}>
       <Profile
-        fullname={"Пристёгин Семен Эдуардович"}
-        group={"ИТ2204"}
-        update_at={data.update_at}
+        {...data.profile}
+        updated_at={data.hacker_rank_stats.updated_at}
       />
       <LabsList labs={data.labs} />
-      <Scores sql={data.sql_score} python={data.python_score} />
+      <Scores {...data.hacker_rank_stats} />
     </main>
   );
 });

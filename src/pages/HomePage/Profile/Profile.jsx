@@ -1,7 +1,9 @@
 import styles from "./Profile.module.css";
 import Card from "components/Card";
 
-const Profile = ({ fullname, group, update_at }) => {
+const Profile = (props) => {
+  const { fullname, group, updated_at } = props;
+
   return (
     <Card className={styles.profile__container}>
       <div className={styles.profile__fullname}>
@@ -12,7 +14,7 @@ const Profile = ({ fullname, group, update_at }) => {
         <a href="/labs/1/tasks/10/">Задание 10 ⟶</a>
       </div>
       <div className={styles.profile__update_at}>
-        Дата обновления: {update_at}
+        Дата обновления: {updated_at}
       </div>
     </Card>
   );

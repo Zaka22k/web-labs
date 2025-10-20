@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const DATA_URL = import.meta.env.VITE_DATA_URL;
 const DataContext = createContext();
@@ -24,11 +24,9 @@ export const DataProvider = ({ children }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  return (
-    <DataContext.Provider value={{ data, loading }}>
-      {children}
-    </DataContext.Provider>
-  );
+  const value = useMemo(() => ({ data, loading }), [data, loading]);
+
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };
 
 export const useData = () => useContext(DataContext);

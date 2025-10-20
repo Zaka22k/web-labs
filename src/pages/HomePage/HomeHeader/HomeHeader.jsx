@@ -1,6 +1,8 @@
 import styles from "./HomeHeader.module.css";
 
-const HomeHeader = ({ title }) => {
+const HomeHeader = (props) => {
+  const { title } = props;
+
   return <header className={styles.header}>{title}</header>;
 };
 

@@ -5,7 +5,8 @@ import Icon from "components/Icon";
 import Card from "components/Card";
 import styles from "./TaskHeader.module.css";
 
-const TaskHeader = ({ lab }) => {
+const TaskHeader = (props) => {
+  const { lab } = props;
   const { labId, taskId } = useParams();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);

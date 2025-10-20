@@ -4,8 +4,10 @@ import TaskItem from "../TaskItem";
 import Separator from "components/Separator";
 import React from "react";
 
-const TasksList = ({ labId, tasksCount }) => {
+const TasksList = (props) => {
+  const { labId, tasksCount } = props;
   const tasks = Array.from({ length: tasksCount });
+
   return (
     <Card className={styles.tasks__container}>
       <div
