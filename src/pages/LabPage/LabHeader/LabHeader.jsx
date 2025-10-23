@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from "./LabHeader.module.css";
 import Icon from "components/Icon";
@@ -7,10 +6,9 @@ const LabHeader = (props) => {
   const { data } = props;
   const { labId } = useParams();
   const navigate = useNavigate();
-  const containerRef = useRef(null);
 
-  const handleChange = (e) => {
-    navigate(`/labs/${e.target.value}`);
+  const handleChange = ({ target: { value } }) => {
+    if (value !== labId) navigate(`/labs/${value}`);
   };
 
   return (
@@ -18,7 +16,7 @@ const LabHeader = (props) => {
       <div className={styles.home} onClick={() => navigate("/")}>
         <Icon>home</Icon>
       </div>
-      <div className={styles.nav__container} ref={containerRef}>
+      <div className={styles.nav__container}>
         {data.map((lab, index) => (
           <div key={index} className={styles.option}>
             <input

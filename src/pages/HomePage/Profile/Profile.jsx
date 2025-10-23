@@ -1,5 +1,6 @@
 import styles from "./Profile.module.css";
 import Card from "components/Card";
+import { formatDate } from "utils/FormatDate";
 
 const Profile = (props) => {
   const { fullname, group, updated_at } = props;
@@ -14,7 +15,7 @@ const Profile = (props) => {
         <a href="/labs/1/tasks/10/">Задание 10 ⟶</a>
       </div>
       <div className={styles.profile__update_at}>
-        Дата обновления: {updated_at}
+        Дата обновления: {formatDate(updated_at)}
       </div>
     </Card>
   );
