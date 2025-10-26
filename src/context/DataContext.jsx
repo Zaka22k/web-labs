@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  useCallback,
+} from "react";
 
 const DATA_URL = import.meta.env.VITE_DATA_URL;
 const CACHE_KEY = "app_data";
@@ -9,8 +16,12 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
+    setLoading(true);
+    setError(false);
+
     const cached = localStorage.getItem(CACHE_KEY);
 
     if (cached) {
@@ -39,10 +50,18 @@ export const DataProvider = ({ children }) => {
           JSON.stringify({ data: json, timestamp: Date.now() })
         );
       })
+      .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, []);
 
-  const value = useMemo(() => ({ data, loading }), [data, loading]);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const value = useMemo(
+    () => ({ data, loading, error, reload: fetchData }),
+    [data, loading, error, fetchData]
+  );
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };

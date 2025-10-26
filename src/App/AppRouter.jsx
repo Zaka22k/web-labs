@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route, useLocation, useMatch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "components/PageTransition";
-import LoadState from "components/LoadState";
+import { LoadState, ErrorState } from "components/DataStates";
 import { useData } from "context/DataContext";
 
 const HomePage = lazy(() => import("pages/HomePage"));
@@ -12,37 +12,20 @@ const TaskPreview = lazy(() => import("pages/TaskPage/TaskPreview"));
 const LabMain = lazy(() => import("pages/LabPage/LabMain"));
 
 const AppRouter = () => {
-  const location = useLocation();
-  const isTaskRoute = useMatch("/labs/:labId/tasks/:taskId");
-  const { loading: dataLoading } = useData();
+  const { loading: dataLoading, error: dataError } = useData();
 
-  const SmartFallback = () => <LoadState />;
+  const SmartLoad = () => <LoadState />;
+  const SmartError = () => <ErrorState />;
 
   return (
     <AnimatePresence mode="wait">
-      <Suspense fallback={<SmartFallback />}>
-        {dataLoading ? (
-          <SmartFallback />
+      <Suspense fallback={<SmartLoad />}>
+        {dataError ? (
+          <SmartError />
+        ) : dataLoading ? (
+          <SmartLoad />
         ) : (
-          <Routes
-            location={location}
-            key={isTaskRoute ? "lab-inner" : location.pathname}
-          >
-            <Route
-              path="/"
-              element={
-                <PageTransition>
-                  <HomePage />
-                </PageTransition>
-              }
-            />
-            <Route path="/labs/:labId" element={<LabPage />}>
-              <Route index element={<LabMain />} />
-            </Route>
-            <Route path="/labs/:labId" element={<TaskPage />}>
-              <Route path="tasks/:taskId" element={<TaskPreview />} />
-            </Route>
-          </Routes>
+          <AppRoutes />
         )}
       </Suspense>
     </AnimatePresence>
@@ -50,3 +33,29 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+
+const AppRoutes = () => {
+  const location = useLocation();
+  const isTaskRoute = useMatch("/labs/:labId/tasks/:taskId");
+  return (
+    <Routes
+      location={location}
+      key={isTaskRoute ? "lab-inner" : location.pathname}
+    >
+      <Route
+        path="/"
+        element={
+          <PageTransition>
+            <HomePage />
+          </PageTransition>
+        }
+      />
+      <Route path="/labs/:labId" element={<LabPage />}>
+        <Route index element={<LabMain />} />
+      </Route>
+      <Route path="/labs/:labId" element={<TaskPage />}>
+        <Route path="tasks/:taskId" element={<TaskPreview />} />
+      </Route>
+    </Routes>
+  );
+};

@@ -8,7 +8,7 @@
 }
 
 .student {
-  font-size: 24.5px;
+  font-size: var(--font-subtitle);
   font-weight: 600;
   display: flex;
   flex-direction: row;
@@ -20,6 +20,6 @@
   & span {
     color: var(--text-secondary);
     font-weight: 400;
-    font-size: 12px;
+    font-size: var(--font-caption);
   }
 }

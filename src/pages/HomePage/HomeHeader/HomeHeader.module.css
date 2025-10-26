@@ -6,7 +6,7 @@
   z-index: 6;
   color: var(--text-primary);
   padding: 12px 16px;
-  font-size: 21px;
+  font-size: var(--font-subtitle);
   font-weight: 600;
   line-height: 1.87rem;
 }

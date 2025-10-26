@@ -11,26 +11,28 @@ body {
 }
 
 :root {
-  --bg: linear-gradient(64deg, #0f0f0f, #1e1e1f 45%, #323235 80%);
+  --bg: linear-gradient(64deg, #8bbfff, #4da5ff 46%, #005ea8);
 
-  --bg-image: url("assets/wallpaper_dark.svg");
-  --header-bg: rgba(56, 56, 61, 0.6);
+  --bg-image: url("assets/wallpaper.svg");
 
-  --shadow: 17px 20px 40px rgba(0, 0, 0, 0.65);
+  --shadow: 17px 20px 40px rgba(0, 0, 0, 0.16);
 
-  --surface-bg: rgba(49, 49, 49, 0.6);
-  --surface-stroke: rgba(95, 95, 95, 0.6);
+  --surface-bg: rgba(243, 243, 243, 0.6);
+  --surface-stroke: rgba(255, 255, 255, 0.6);
 
-  --accent-primary: rgb(24, 174, 254);
+  --accent-primary: rgb(0, 103, 192);
 
-  --separator: rgba(118, 118, 128, 0.35);
+  --control-bg: rgba(251, 251, 251, 0.6);
+  --control-hover: rgba(238, 238, 238, 0.6);
+  --control-neutral: rgba(166, 166, 166, 0.6);
 
-  --control-bg: rgba(80, 80, 80, 0.6);
-  --control-hover: rgba(99, 99, 102, 0.6);
-
-  --text-primary: rgb(245, 245, 245);
-  --text-secondary: hsla(0, 0%, 100%, 0.66);
-  --text-inverted: rgba(0, 0, 0, 0.88);
+  --text-primary: rgb(26, 26, 26);
+  --text-secondary: rgb(92, 92, 92);
 
   --hover-transition: all 167ms cubic-bezier(0, 0, 0, 1);
+
+  --font-title: 28px;
+  --font-subtitle: 24px;
+  --font-body: 18px;
+  --font-caption: 16px;
 }

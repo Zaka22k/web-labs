@@ -3,7 +3,7 @@
   z-index: 6;
   padding: 16px;
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: var(--font-caption);
   font-weight: 400;
   text-align: center;
 }

@@ -4,7 +4,7 @@
 }
 
 .tasks__title {
-  font-size: 17px;
+  font-size: var(--font-body);
   line-height: 25px;
   margin-bottom: 20px;
   color: var(--text-secondary);

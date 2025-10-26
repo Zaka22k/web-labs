@@ -6,7 +6,8 @@
   column-gap: 20px;
   row-gap: 15px;
   padding: 5% 1rem;
-  max-width: 1300px;
+  width: 100%;
+  max-width: 1250px;
   align-self: center;
 }
 
@@ -18,9 +19,6 @@
       "labs";
     grid-template-rows: max-content max-content 1fr;
   }
-  .profile-username {
-    font-size: 1.31rem;
-  }
 }
 
 @media (min-width: 950px) {
@@ -29,7 +27,7 @@
       "profile labs"
       "profile labs"
       "score labs";
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 400px 1fr;
     grid-template-rows: 1fr max-content;
   }
 }
