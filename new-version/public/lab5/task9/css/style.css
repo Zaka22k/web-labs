@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+input,
+select,
+button {
+  padding: 5px;
+  font-size: 16px;
+}
+button {
+  margin-top: 10px;
+  height: 35px;
+}
+input.invalid {
+  border: 2px solid red;
+}
+small {
+  color: red;
+  height: 18px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Задание 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="box">
+      <div class="row">
+        <input type="text" id="operand1" placeholder="Первый операнд" />
+        <select id="operator" aria-label="Операция">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="sqrt">√ (квадратный корень)</option>
+          <option value="log">log (логарифм)</option>
+        </select>
+        <input type="text" id="operand2" placeholder="Второй операнд" />
+        <input
+          type="text"
+          id="base"
+          placeholder="Основание логарифма"
+          style="display: none"
+        />
+        <button id="doCalc" type="button">=</button>
+        <span id="result" aria-live="polite"></span>
+      </div>
+      <div class="row">
+        <label>
+          <input type="checkbox" id="roundResult" /> Округлить до 3-х знаков
+        </label>
+      </div>
+    </section>
+
+    <script src="calc.js" defer></script>
+  </body>
+</html>

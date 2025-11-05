@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --bg: linear-gradient(64deg, #8bbfff, #4da5ff 46%, #005ea8);
+
+  --bg-image: url("assets/wallpaper.svg");
+
+  --shadow: 17px 20px 40px rgba(0, 0, 0, 0.16);
+
+  --surface-bg: rgba(243, 243, 243, 0.6);
+  --surface-stroke: rgba(255, 255, 255, 0.6);
+
+  --accent-primary: rgb(0, 103, 192);
+
+  --status-success: rgb(223, 246, 221);
+  --status-warning: rgb(255, 244, 206);
+  --status-error: rgb(253, 231, 233);
+
+  --control-bg: rgba(251, 251, 251, 0.6);
+  --control-hover: rgba(238, 238, 238, 0.6);
+  --control-neutral: rgba(166, 166, 166, 0.6);
+
+  --text-primary: rgb(26, 26, 26);
+  --text-secondary: rgb(92, 92, 92);
+  --text-inverted: rgb(255, 255, 255);
+
+  --hover-transition: all 167ms cubic-bezier(0, 0, 0, 1);
+
+  --font-title: 28px;
+  --font-subtitle: 24px;
+  --font-body: 18px;
+  --font-caption: 16px;
+  --font-caption-small: 12px;
+}

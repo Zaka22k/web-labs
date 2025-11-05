@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Задание 8</title>
+  </head>
+  <body>
+    <form id="registrationForm" novalidate>
+      <h2>Регистрация</h2>
+
+      <label>
+        Логин:
+        <input
+          type="text"
+          name="login"
+          required
+          minlength="5"
+          maxlength="20"
+          placeholder="Введите логин"
+        />
+      </label>
+
+      <label>
+        Пароль:
+        <input
+          type="password"
+          name="password"
+          required
+          minlength="5"
+          maxlength="12"
+          placeholder="Введите пароль"
+        />
+      </label>
+
+      <label>
+        Возраст (необязательный):
+        <input
+          type="number"
+          name="age"
+          min="14"
+          max="120"
+          step="1"
+          placeholder="Введите возраст"
+        />
+      </label>
+
+      <label>
+        Город:
+        <select name="city" required>
+          <option value="">Не выбран</option>
+          <option value="moscow">Москва</option>
+          <option value="spb">Санкт-Петербург</option>
+          <option value="kazan">Казань</option>
+          <option value="novosibirsk">Новосибирск</option>
+          <option value="sochi">Сочи</option>
+        </select>
+      </label>
+
+      <button type="submit">Отправить</button>
+    </form>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

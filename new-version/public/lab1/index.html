@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Лабораторная 1, ссылки на задания. Пристёгин Семен Эдуардович, ИТ2204
+    </title>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --background: #ececea;
+
+        --accent: #272727;
+
+        --foreground1: rgb(39, 39, 39);
+        --foreground1-inverted: #ececea;
+        --foreground2: rgb(106, 106, 105);
+        --foreground2-inverted: #9d9f9e;
+
+        --block-background: #ffffff;
+
+        --lab-background-hover: #ededed;
+
+        --separator: #dadada;
+
+        --shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+      }
+
+      body {
+        background: var(--background);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      header {
+        color: var(--foreground1);
+        padding: 8px 16px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.87rem;
+      }
+
+      main {
+        display: grid;
+        gap: 20px;
+        max-width: 1200px;
+        flex: 1;
+        padding: 5%;
+        align-self: center;
+        align-content: center;
+      }
+
+      @media (max-width: 899px) {
+        main {
+          grid-template-rows: max-content max-content max-content;
+          grid-template-areas:
+            "profile"
+            "labs"
+            "menu";
+        }
+      }
+
+      @media (min-width: 900px) {
+        main {
+          grid-template-columns: 200px 1fr;
+          grid-template-rows: max-content max-content;
+          grid-template-areas:
+            "menu profile"
+            "menu labs";
+        }
+      }
+
+      .block {
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        border-radius: 22px;
+        background-color: var(--block-background);
+        padding: 16px;
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        grid-area: menu;
+      }
+
+      .profile {
+        grid-area: profile;
+        font-size: 24.5px;
+        color: var(--foreground1);
+      }
+
+      .labs {
+        display: flex;
+        flex-direction: column;
+        grid-area: labs;
+      }
+      .labs-header,
+      .menu-header {
+        font-size: 1.31rem;
+        color: var(--foreground1);
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .labs-content,
+      .menu-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .task {
+        text-decoration: none;
+        transition: all 0.167s;
+        color: var(--foreground2);
+        font-size: 17px;
+        padding: 8px 12px;
+        border-radius: 11px;
+      }
+      .task:hover {
+        color: var(--foreground1);
+        background-color: var(--lab-background-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <header>Лабораторная работа №1</header>
+
+    <main>
+      <div class="block profile">Пристёгин Семен Эдуардович, ИТ2204</div>
+
+      <div class="block menu">
+        <div class="menu-header">Меню</div>
+        <div class="menu-content">
+          <a href="/" class="task">Главная</a>
+          <a href="/lab2/" class="task">Лаб. №2</a>
+          <a href="/lab3/" class="task">Лаб. №3</a>
+          <a href="/lab4/" class="task">Лаб. №4</a>
+        </div>
+      </div>
+
+      <div class="block labs">
+        <div class="labs-header">Задания лабораторной работы 1</div>
+        <div class="labs-content">
+          <a class="task" href="/lab1/task1/">Задание 1</a>
+          <a class="task" href="/lab1/task2/">Задание 2</a>
+          <a class="task" href="/lab1/task3/">Задание 3</a>
+          <a class="task" href="/lab1/task4/">Задание 4</a>
+          <a class="task" href="/lab1/task5/">Задание 5</a>
+          <a class="task" href="/lab1/task6/">Задание 6</a>
+          <a class="task" href="/lab1/task7/">Задание 7</a>
+          <a class="task" href="/lab1/task8/">Задание 8</a>
+          <a class="task" href="/lab1/task9/">Задание 9</a>
+          <a class="task" href="/lab1/task10/">Задание 10</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.block {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.333s;
+  font-weight: 700;
+  font-size: 4rem;
+  color: white;
+}
+
+@media (max-width: 299px) {
+  .block {
+    background-color: #1abc9c;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .block {
+    background-color: #2ecc71;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1300px) {
+  .block {
+    background-color: #3498db;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1800px) {
+  .block {
+    background-color: #9b59b6;
+  }
+}
+
+@media (min-width: 1801px) {
+  .block {
+    background-color: #34495e;
+  }
+}
