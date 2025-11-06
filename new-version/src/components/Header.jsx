@@ -10,6 +10,12 @@ const useStyles = makeStyles({
     padding: "0px 12px",
     justifyContent: "space-between",
   },
+  headerTitle: {
+    display: "flex",
+    flexDirection: "row",
+    gap: "8px",
+    alignItems: "center",
+  },
 });
 
 function Header({ name, onToggle }) {
@@ -17,7 +23,7 @@ function Header({ name, onToggle }) {
 
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.headerTitle}>
         <Hamburger onClick={onToggle} />
         <Subtitle2>Веб-инжиниринг</Subtitle2>
       </div>

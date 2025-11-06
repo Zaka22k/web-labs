@@ -46,7 +46,7 @@ export default function Sidebar({ open, isMobile, onClose, labs }) {
       <NavDrawerBody>
         <NavItem
           value="home"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
           className={styles.nav}
           icon={<Home20Regular />}
         >

@@ -26,7 +26,6 @@ const useStyles = makeStyles({
   content: {
     flex: 1,
     backgroundColor: tokens.colorNeutralBackground2,
-    borderTopLeftRadius: "16px",
     borderTop: `1px solid ${tokens.colorNeutralStrokeOnBrand}`,
     borderLeft: `1px solid ${tokens.colorNeutralStrokeOnBrand}`,
     borderRight: "none",
@@ -68,7 +67,10 @@ export default function MainLayout() {
           onClose={() => setIsOpen(false)}
           labs={data.labs}
         />
-        <main className={styles.content}>
+        <main
+          className={styles.content}
+          style={{ borderTopLeftRadius: isOpen ? "16px" : "0px" }}
+        >
           <Outlet />
         </main>
       </div>

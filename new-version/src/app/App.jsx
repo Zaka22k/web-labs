@@ -20,7 +20,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainLayout />}>
-              <Route path="home" element={<HomePage />} />
+              <Route index element={<HomePage />} />
               <Route path="lab/:labId/task/:taskId" element={<TaskPage />} />
             </Route>
           </Routes>

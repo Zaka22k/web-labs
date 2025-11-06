@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { makeStyles } from "@fluentui/react-components";
 import { Slide } from "@fluentui/react-motion-components-preview";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
   container: {
@@ -19,13 +20,14 @@ const useStyles = makeStyles({
 export default function TaskPage() {
   const { labId, taskId } = useParams();
   const styles = useStyles();
+  const navigate = useNavigate();
 
   const iframeRef = useRef(null);
   const [visible, setVisible] = useState(true);
-  const [src, setSrc] = useState(`/lab${labId}/task${taskId}/index.html`);
+  const [src, setSrc] = useState(`/lab${labId}/task${taskId}/`);
 
   useEffect(() => {
-    const newSrc = `/lab${labId}/task${taskId}/index.html`;
+    const newSrc = `/lab${labId}/task${taskId}/`;
     if (newSrc === src) return;
 
     setVisible(false);
@@ -57,6 +59,7 @@ export default function TaskPage() {
             window.open(href, "_blank");
           } else if (href === "/" || href === "/index.html") {
             e.preventDefault();
+            navigate("/");
           }
         });
       });
