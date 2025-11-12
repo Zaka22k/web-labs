@@ -1,28 +1,21 @@
 import {
   Hamburger,
-  makeStyles,
   NavCategory,
   NavCategoryItem,
   NavDrawer,
   NavDrawerBody,
+  NavDrawerFooter,
   NavDrawerHeader,
   NavItem,
   NavSectionHeader,
   NavSubItem,
   NavSubItemGroup,
-  tokens,
+  Persona,
 } from "@fluentui/react-components";
 import { Home20Regular } from "@fluentui/react-icons";
 import { useNavigate, useParams } from "react-router-dom";
 
-const useStyles = makeStyles({
-  nav: {
-    backgroundColor: tokens.colorNeutralBackground1,
-  },
-});
-
-export default function Sidebar({ open, isMobile, onClose, labs }) {
-  const styles = useStyles();
+export default function Sidebar({ open, isMobile, onClose, data }) {
   const navigate = useNavigate();
   const { labId, taskId } = useParams();
 
@@ -34,7 +27,6 @@ export default function Sidebar({ open, isMobile, onClose, labs }) {
       open={open}
       type={isMobile ? "overlay" : "inline"}
       multiple={false}
-      className={styles.nav}
       selectedCategoryValue={selectedCategoryValue}
       selectedValue={selectedValue}
     >
@@ -47,7 +39,6 @@ export default function Sidebar({ open, isMobile, onClose, labs }) {
         <NavItem
           value="home"
           onClick={() => navigate("/")}
-          className={styles.nav}
           icon={<Home20Regular />}
         >
           Главная
@@ -55,20 +46,28 @@ export default function Sidebar({ open, isMobile, onClose, labs }) {
 
         <NavSectionHeader>Лабораторные работы</NavSectionHeader>
 
-        {labs.map((lab) => (
+        {data?.labs?.map((lab) => (
           <LabItem key={`lab-${lab.code}`} lab={lab} />
         ))}
       </NavDrawerBody>
+      <NavDrawerFooter>
+        <Persona
+          style={{ marginBottom: "16px" }}
+          avatar={{ color: "colorful" }}
+          textAlignment="center"
+          name={data.fullname}
+          secondaryText={data.group}
+          size="large"
+        />
+      </NavDrawerFooter>
     </NavDrawer>
   );
 }
 
 function LabItem({ lab }) {
-  const styles = useStyles();
-
   return (
     <NavCategory value={`lab${lab.code}`}>
-      <NavCategoryItem value={`lab${lab.code}`} className={styles.nav}>
+      <NavCategoryItem value={`lab${lab.code}`}>
         {`${lab.code}. ${lab.title}`}
       </NavCategoryItem>
       <TaskList lab={lab} />
@@ -93,15 +92,10 @@ function TaskList({ lab }) {
 }
 
 function TaskItem({ value, path, children }) {
-  const styles = useStyles();
   const navigate = useNavigate();
 
   return (
-    <NavSubItem
-      value={value}
-      onClick={() => navigate(path)}
-      className={styles.nav}
-    >
+    <NavSubItem value={value} onClick={() => navigate(path)}>
       {children}
     </NavSubItem>
   );

@@ -1,13 +1,13 @@
-import { makeStyles } from "@fluentui/react-components";
+import { makeStyles, tokens } from "@fluentui/react-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "layout/MainLayout";
-import TaskPage from "pages/TaskPage";
-import HomePage from "pages/HomePage";
+import { TaskPage, HomePage } from "pages";
 import { DataProvider } from "context/DataContext";
 
 const useStyles = makeStyles({
   root: {
     minHeight: "100vh",
+    backgroundColor: tokens.colorNeutralBackground4,
   },
 });
 

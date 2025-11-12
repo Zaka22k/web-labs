@@ -9,6 +9,7 @@ import {
 } from "@fluentui/react-components";
 import { useData } from "context/DataContext";
 import { useNavigate } from "react-router-dom";
+import { PageTemplate } from "components";
 
 const useStyles = makeStyles({
   pageWrapper: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles({
     gap: "12px",
   },
   sectionContent: {
-    backgroundColor: tokens.colorNeutralBackground3,
+    backgroundColor: tokens.colorNeutralBackground2,
     border: `1px solid ${tokens.colorNeutralStroke2}`,
     borderRadius: "8px",
     padding: "16px",
@@ -55,46 +56,49 @@ const useStyles = makeStyles({
 export default function HomePage() {
   const { data } = useData();
   const styles = useStyles();
+
   const navigate = useNavigate();
 
   const labCount = data.labs.length;
   const { sql, python } = data.hacker_rank_scores;
 
   return (
-    <div className={styles.pageWrapper}>
-      <HomeSection className={styles.profileContainer} title="Профиль">
-        <div className={styles.profileInfoContainer}>
-          <Body2>{data.fullname}</Body2>
+    <PageTemplate>
+      <div className={styles.pageWrapper}>
+        <HomeSection className={styles.profileContainer} title="Профиль">
+          <div className={styles.profileInfoContainer}>
+            <Body2>{data.fullname}</Body2>
+            <Body1 style={{ color: tokens.colorNeutralForeground2 }}>
+              {data.group}
+            </Body1>
+          </div>
+          <Link onClick={() => navigate("/lab/1/task/10")}>Задание 10</Link>
+        </HomeSection>
+
+        <HomeSection
+          className={styles.progressContainer}
+          title="Прогресс по работам"
+        >
+          <Body2>Сдано</Body2>
+          <RatingDisplay
+            count={12}
+            color="brand"
+            value={labCount}
+            max={12}
+          ></RatingDisplay>
+        </HomeSection>
+
+        <HomeSection title="Баллы на HackerRank">
+          <div className={styles.scoreContainer}>
+            <Body2>{`SQL - ${sql}`}</Body2>
+            <Body2>{`Python - ${python}`}</Body2>
+          </div>
           <Body1 style={{ color: tokens.colorNeutralForeground2 }}>
-            {data.group}
+            Обновлено {data.updated_at}
           </Body1>
-        </div>
-        <Link onClick={() => navigate("/lab/1/task/10")}>Задание 10</Link>
-      </HomeSection>
-
-      <HomeSection
-        className={styles.progressContainer}
-        title="Прогресс по работам"
-      >
-        <Body2>Сдано</Body2>
-        <RatingDisplay
-          count={12}
-          color="brand"
-          value={labCount}
-          max={12}
-        ></RatingDisplay>
-      </HomeSection>
-
-      <HomeSection title="Баллы на HackerRank">
-        <div className={styles.scoreContainer}>
-          <Body2>{`SQL - ${sql}`}</Body2>
-          <Body2>{`Python - ${python}`}</Body2>
-        </div>
-        <Body1 style={{ color: tokens.colorNeutralForeground2 }}>
-          Обновлено {data.updated_at}
-        </Body1>
-      </HomeSection>
-    </div>
+        </HomeSection>
+      </div>
+    </PageTemplate>
   );
 }
 

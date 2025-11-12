@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { makeStyles } from "@fluentui/react-components";
-import { Slide } from "@fluentui/react-motion-components-preview";
 import { useNavigate } from "react-router-dom";
+import { PageTemplate } from "components";
 
 const useStyles = makeStyles({
   container: {
@@ -23,21 +23,6 @@ export default function TaskPage() {
   const navigate = useNavigate();
 
   const iframeRef = useRef(null);
-  const [visible, setVisible] = useState(true);
-  const [src, setSrc] = useState(`/lab${labId}/task${taskId}/`);
-
-  useEffect(() => {
-    const newSrc = `/lab${labId}/task${taskId}/`;
-    if (newSrc === src) return;
-
-    setVisible(false);
-    const timer = setTimeout(() => {
-      setSrc(newSrc);
-      setVisible(true);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [labId, taskId]);
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -47,7 +32,7 @@ export default function TaskPage() {
       const doc = iframe.contentDocument || iframe.contentWindow.document;
       if (!doc) return;
 
-      doc.body.style.padding = "36px";
+      doc.body.style.padding = "24px";
 
       doc.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", (e) => {
@@ -67,24 +52,18 @@ export default function TaskPage() {
 
     iframe.addEventListener("load", handleLoad);
     return () => iframe.removeEventListener("load", handleLoad);
-  }, [src]);
+  }, [labId, taskId]);
 
   return (
-    <div className={styles.container}>
-      <Slide
-        visible={visible}
-        direction="horizontal"
-        enterFrom="end"
-        exitTo="start"
-      >
+    <PageTemplate key={`${labId}-${taskId}`}>
+      <div className={styles.container}>
         <iframe
           ref={iframeRef}
-          key={src}
-          src={src}
+          src={`/lab${labId}/task${taskId}/`}
           className={styles.iframe}
           title={`lab${labId}-task${taskId}`}
         />
-      </Slide>
-    </div>
+      </div>
+    </PageTemplate>
   );
 }

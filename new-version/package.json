@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fluentui/react-components": "^9.72.4",
+    "@fluentui/react-motion-components-preview": "^0.14.0",
     "framer-motion": "^12.23.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

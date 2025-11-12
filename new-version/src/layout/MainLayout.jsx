@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "components/Sidebar";
-import Header from "components/Header";
+import { Header, Sidebar } from "components";
 import {
   Button,
   makeStyles,
@@ -25,9 +24,9 @@ const useStyles = makeStyles({
   },
   content: {
     flex: 1,
-    backgroundColor: tokens.colorNeutralBackground2,
-    borderTop: `1px solid ${tokens.colorNeutralStrokeOnBrand}`,
-    borderLeft: `1px solid ${tokens.colorNeutralStrokeOnBrand}`,
+    backgroundColor: tokens.colorNeutralBackground3,
+    borderTop: `1px solid ${tokens.colorNeutralStroke1}`,
+    borderLeft: `1px solid ${tokens.colorNeutralStroke1}`,
     borderRight: "none",
     borderBottom: "none",
     "@media (max-width: 768px)": {
@@ -65,7 +64,7 @@ export default function MainLayout() {
           open={isOpen}
           isMobile={isMobile}
           onClose={() => setIsOpen(false)}
-          labs={data.labs}
+          data={data}
         />
         <main
           className={styles.content}
@@ -81,14 +80,7 @@ export default function MainLayout() {
 function MainLoad() {
   const styles = useStyles();
 
-  return (
-    <Spinner
-      className={styles.pageWrapper}
-      size="large"
-      labelPosition="below"
-      label="Загрузка"
-    />
-  );
+  return <Spinner className={styles.pageWrapper} size="extra-large" />;
 }
 
 function MainError({ onClick }) {

@@ -5,24 +5,27 @@ import { FluentProvider, webDarkTheme } from "@fluentui/react-components";
 
 const customDarkTheme = {
   ...webDarkTheme,
-  colorNeutralBackground1: "#202020",
-  colorNeutralBackground2: "#272727",
-  colorNeutralBackground3: "#2d2d2d",
-  colorNeutralBackground4: "#2d2d2d",
+
+  colorNeutralBackground2: "#2d2d2d",
+  colorNeutralBackground3: "#272727",
+  colorNeutralBackground4: "#202020",
   colorNeutralBackground4Hover: "#2d2d2d",
 
-  colorBrandBackground2: "#69734e",
+  colorNeutralForeground1: "#ffffff",
+  colorNeutralForeground2: "#cccccc",
+  colorBrandForegroundLink: "#99ebff",
+  colorBrandForegroundLinkHover: "#4cc2ff",
+  colorCompoundBrandForeground1: "#4cc2ff",
+  colorBrandForeground1: "#99ebff",
+  colorNeutralForeground2BrandHover: "#99ebff",
+  colorNeutralForeground2BrandPressed: "#4cc2ff",
 
-  colorBrandForeground1: "#d8e7a7",
-  colorCompoundBrandForeground1: "#b7c888",
-  colorNeutralForeground2BrandHover: "#a7b77d",
-  colorNeutralForeground2BrandPressed: "#b7c888",
-  colorBrandForegroundLink: "#d8e7a7",
-  colorBrandForegroundLinkHover: "#d8e7a7",
-  colorBrandForegroundLinkPressed: "#b7c888",
+  colorBrandBackground2: "#296685",
 
-  colorNeutralStrokeOnBrand: "#1d1d1d",
+  colorNeutralStroke1: "#1d1d1d",
   colorNeutralStroke2: "#303030",
+  colorBrandStroke1: "#4cc2ff",
+  colorBrandStroke2Contrast: "#25607e",
 };
 
 createRoot(document.getElementById("root")).render(
