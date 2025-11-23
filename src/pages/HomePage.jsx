@@ -60,7 +60,7 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const labCount = data.labs.length;
-  const { sql, python } = data.hacker_rank_scores;
+  const { sql, python } = data.hackerrank_stats;
 
   return (
     <PageTemplate>
