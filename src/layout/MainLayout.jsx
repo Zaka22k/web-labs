@@ -25,8 +25,8 @@ const useStyles = makeStyles({
   content: {
     flex: 1,
     backgroundColor: tokens.colorNeutralBackground3,
-    borderTop: `1px solid ${tokens.colorNeutralStroke1}`,
-    borderLeft: `1px solid ${tokens.colorNeutralStroke1}`,
+    borderTop: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
+    borderLeft: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
     borderRight: "none",
     borderBottom: "none",
     "@media (max-width: 768px)": {
