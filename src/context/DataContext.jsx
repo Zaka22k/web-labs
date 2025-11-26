@@ -6,8 +6,8 @@ import {
   useState,
   useCallback,
 } from "react";
+import API from "../api";
 
-const DATA_URL = import.meta.env.VITE_DATA_URL;
 const CACHE_KEY = "app_data";
 const CACHE_TTL = 20 * 60 * 1000;
 
@@ -18,7 +18,7 @@ export const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const fetchData = useCallback(() => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     setError(false);
 
@@ -41,17 +41,18 @@ export const DataProvider = ({ children }) => {
       }
     }
 
-    fetch(DATA_URL)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        localStorage.setItem(
-          CACHE_KEY,
-          JSON.stringify({ data: json, timestamp: Date.now() })
-        );
-      })
-      .catch(() => setError(true))
-      .finally(() => setLoading(false));
+    try {
+      const res = await API.details();
+      setData(res);
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({ data: res, timestamp: Date.now() })
+      );
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   useEffect(() => {

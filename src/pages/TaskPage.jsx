@@ -44,7 +44,7 @@ export default function TaskPage() {
             window.open(href, "_blank");
           } else if (href === "/" || href === "/index.html") {
             e.preventDefault();
-            navigate("/");
+            navigate("/dashboard");
           }
         });
       });
@@ -59,9 +59,9 @@ export default function TaskPage() {
       <div className={styles.container}>
         <iframe
           ref={iframeRef}
-          src={`/lab${labId}/task${taskId}/`}
+          src={`/${labId}/${taskId}/`}
           className={styles.iframe}
-          title={`lab${labId}-task${taskId}`}
+          title={`${labId}-${taskId}`}
         />
       </div>
     </PageTemplate>

@@ -1,5 +1,4 @@
 import {
-  Body2,
   Body1,
   Subtitle1,
   Subtitle2,
@@ -89,7 +88,7 @@ export default function HomePage() {
               </Body1>
             </div>
 
-            <Link onClick={() => navigate("/lab/1/task/10")}>
+            <Link onClick={() => navigate("/dashboard/lab1/task10")}>
               Перейти к заданию 10
             </Link>
           </div>

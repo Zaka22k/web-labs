@@ -1,4 +1,5 @@
 import {
+  AppItem,
   Hamburger,
   NavCategory,
   NavCategoryItem,
@@ -11,16 +12,29 @@ import {
   NavSubItem,
   NavSubItemGroup,
   Persona,
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverSurface,
 } from "@fluentui/react-components";
 import { Home20Regular } from "@fluentui/react-icons";
 import { useNavigate, useParams } from "react-router-dom";
+import api from "../api";
+import { useNotify } from "context";
 
 export default function Sidebar({ open, isMobile, onClose, data }) {
   const navigate = useNavigate();
   const { labId, taskId } = useParams();
+  const { notifySuccess } = useNotify();
 
-  const selectedCategoryValue = labId ? `lab${labId}` : "";
-  const selectedValue = labId && taskId ? `lab${labId}_task${taskId}` : "home";
+  const selectedCategoryValue = labId ? `${labId}` : "";
+  const selectedValue = labId && taskId ? `${labId}_${taskId}` : "home";
+
+  const handleLogout = () => {
+    api.logout();
+    notifySuccess({ info: "Вы вышли из системы" });
+    navigate("/auth", { replace: true });
+  };
 
   return (
     <NavDrawer
@@ -38,7 +52,7 @@ export default function Sidebar({ open, isMobile, onClose, data }) {
       <NavDrawerBody>
         <NavItem
           value="home"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/dashboard")}
           icon={<Home20Regular />}
         >
           Главная
@@ -51,14 +65,25 @@ export default function Sidebar({ open, isMobile, onClose, data }) {
         ))}
       </NavDrawerBody>
       <NavDrawerFooter>
-        <Persona
-          style={{ marginBottom: "16px" }}
-          avatar={{ color: "colorful" }}
-          textAlignment="center"
-          name={data.fullname}
-          secondaryText={data.group}
-          size="large"
-        />
+        <Popover withArrow>
+          <PopoverTrigger disableButtonEnhancement>
+            <AppItem>
+              <Persona
+                avatar={{ color: "colorful" }}
+                textAlignment="center"
+                name={data.fullname}
+                secondaryText={data.group}
+                size="large"
+              />
+            </AppItem>
+          </PopoverTrigger>
+
+          <PopoverSurface tabIndex={-1} style={{ padding: "0px" }}>
+            <Button onClick={handleLogout} appearance="transparent">
+              Выйти
+            </Button>
+          </PopoverSurface>
+        </Popover>
       </NavDrawerFooter>
     </NavDrawer>
   );
@@ -82,7 +107,7 @@ function TaskList({ lab }) {
         <TaskItem
           key={`lab-${lab.code}-task-${taskIndex + 1}`}
           value={`lab${lab.code}_task${taskIndex + 1}`}
-          path={`/lab/${lab.code}/task/${taskIndex + 1}`}
+          path={`/dashboard/lab${lab.code}/task${taskIndex + 1}`}
         >
           {`Задание ${taskIndex + 1}`}
         </TaskItem>

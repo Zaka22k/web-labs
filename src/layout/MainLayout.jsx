@@ -1,15 +1,9 @@
 import { Outlet } from "react-router-dom";
-import { Header, Sidebar } from "components";
-import {
-  Button,
-  makeStyles,
-  Spinner,
-  Title3,
-  tokens,
-} from "@fluentui/react-components";
+import { Header, Sidebar, PageLoader } from "components";
+import { makeStyles, tokens } from "@fluentui/react-components";
 import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useData } from "context/DataContext";
+import { useData } from "context";
 
 const useStyles = makeStyles({
   pageWrapper: {
@@ -50,11 +44,9 @@ export default function MainLayout() {
   const styles = useStyles();
   const [isOpen, setIsOpen] = useState(true);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const { data, loading, error, reload } = useData();
+  const { data, loading } = useData();
 
-  if (error) return <MainError onClick={reload} />;
-
-  if (loading) return <MainLoad />;
+  if (loading) return <PageLoader />;
 
   return (
     <div className={styles.pageWrapper}>
@@ -73,25 +65,6 @@ export default function MainLayout() {
           <Outlet />
         </main>
       </div>
-    </div>
-  );
-}
-
-function MainLoad() {
-  const styles = useStyles();
-
-  return <Spinner className={styles.pageWrapper} size="extra-large" />;
-}
-
-function MainError({ onClick }) {
-  const styles = useStyles();
-
-  return (
-    <div className={styles.errorWrapper}>
-      <Title3>Не удалось загрузить данные.</Title3>
-      <Button onClick={onClick} shape="circular">
-        Повторить
-      </Button>
     </div>
   );
 }
