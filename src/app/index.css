@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+body,
+html {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   background: transparent;
 }

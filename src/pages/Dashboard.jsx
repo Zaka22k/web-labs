@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Header, Sidebar, PageLoader } from "components";
 import { makeStyles, tokens } from "@fluentui/react-components";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useData } from "context";
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MainLayout() {
+export default function Dashboard() {
   const styles = useStyles();
   const [isOpen, setIsOpen] = useState(true);
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -50,19 +50,21 @@ export default function MainLayout() {
 
   return (
     <div className={styles.pageWrapper}>
-      <Header onToggle={() => setIsOpen(!isOpen)} name={data.fullname} />
+      <Header onToggle={() => setIsOpen(!isOpen)} data={data} />
       <div className={styles.mainWrapper}>
         <Sidebar
           open={isOpen}
           isMobile={isMobile}
           onClose={() => setIsOpen(false)}
-          data={data}
+          labs={data.labs}
         />
         <main
           className={styles.content}
           style={{ borderTopLeftRadius: isOpen ? "16px" : "0px" }}
         >
-          <Outlet />
+          <Suspense fallback={<PageLoader />}>
+            <Outlet />
+          </Suspense>
         </main>
       </div>
     </div>

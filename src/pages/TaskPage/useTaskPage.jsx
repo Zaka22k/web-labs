@@ -1,25 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { makeStyles } from "@fluentui/react-components";
 import { useNavigate } from "react-router-dom";
-import { PageTemplate } from "components";
 
-const useStyles = makeStyles({
-  container: {
-    position: "relative",
-    flex: 1,
-    overflow: "hidden",
-  },
-  iframe: {
-    width: "100%",
-    height: "100%",
-    border: "none",
-  },
-});
-
-export default function TaskPage() {
+export default function useTaskPage() {
   const { labId, taskId } = useParams();
-  const styles = useStyles();
   const navigate = useNavigate();
 
   const iframeRef = useRef(null);
@@ -54,16 +38,9 @@ export default function TaskPage() {
     return () => iframe.removeEventListener("load", handleLoad);
   }, [labId, taskId]);
 
-  return (
-    <PageTemplate key={`${labId}-${taskId}`}>
-      <div className={styles.container}>
-        <iframe
-          ref={iframeRef}
-          src={`/${labId}/${taskId}/`}
-          className={styles.iframe}
-          title={`${labId}-${taskId}`}
-        />
-      </div>
-    </PageTemplate>
-  );
+  return {
+    labId,
+    taskId,
+    iframeRef,
+  };
 }

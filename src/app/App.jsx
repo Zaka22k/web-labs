@@ -1,9 +1,13 @@
 import { tokens } from "@fluentui/react-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainLayout from "layout/MainLayout";
-import { TaskPage, HomePage, AuthPage } from "pages";
 import { DataProvider, NotifyProvider, AuthProvider } from "context";
-import { AuthGuard } from "components";
+import { ProtectedRoute, PageLoader } from "components";
+import { Suspense, lazy } from "react";
+
+const TaskPage = lazy(() => import("pages/TaskPage"));
+const HomePage = lazy(() => import("pages/HomePage"));
+const AuthPage = lazy(() => import("pages/AuthPage"));
+const Dashboard = lazy(() => import("pages/Dashboard"));
 
 function App() {
   return (
@@ -16,26 +20,26 @@ function App() {
           }}
         >
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<AuthGuard requireAuth={false} />} />
-              <Route path="/auth" element={<AuthPage />} />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<ProtectedRoute protect={false} />} />
+                <Route path="/auth" element={<AuthPage />} />
 
-              <Route element={<AuthGuard requireAuth={true} />}>
-                <Route
-                  element={
-                    <DataProvider>
-                      <MainLayout />
-                    </DataProvider>
-                  }
-                >
-                  <Route path="/dashboard" element={<HomePage />} />
+                <Route element={<ProtectedRoute />}>
                   <Route
-                    path="/dashboard/:labId/:taskId"
-                    element={<TaskPage />}
-                  />
+                    path="/dashboard"
+                    element={
+                      <DataProvider>
+                        <Dashboard />
+                      </DataProvider>
+                    }
+                  >
+                    <Route index element={<HomePage />} />
+                    <Route path=":labId/:taskId" element={<TaskPage />} />
+                  </Route>
                 </Route>
-              </Route>
-            </Routes>
+              </Routes>
+            </Suspense>
           </BrowserRouter>
         </div>
       </NotifyProvider>

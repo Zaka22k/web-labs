@@ -1,4 +1,10 @@
-import { makeStyles, Title2 } from "@fluentui/react-components";
+import {
+  InfoLabel,
+  makeStyles,
+  Subtitle2,
+  Title3,
+  tokens,
+} from "@fluentui/react-components";
 import { PageTemplate, TextBox, SubmitButton } from "components";
 import useAuthPage from "./useAuthPage";
 
@@ -9,17 +15,30 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    gap: "32px",
+  },
+  cardContainer: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    maxWidth: "375px",
+    gap: "8px",
+    backgroundColor: tokens.colorNeutralBackground3,
+    padding: "32px",
+    borderRadius: "8px",
+    boxShadow: tokens.shadow16,
   },
   formContainer: {
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
-    width: "100%",
-    maxWidth: "350px",
+    gap: "12px",
   },
   button: {
-    marginTop: "10px",
+    marginTop: "24px",
+    alignSelf: "end",
+    color: tokens.colorNeutralForegroundInverted,
+    "&:hover": {
+      color: tokens.colorNeutralForegroundInverted,
+    },
   },
 });
 
@@ -30,29 +49,47 @@ export default function AuthPage() {
   return (
     <PageTemplate>
       <div className={styles.pageWrapper}>
-        <Title2>Добро пожаловать</Title2>
-        <form className={styles.formContainer} onSubmit={handleSubmit}>
-          <TextBox
-            value={formData.login}
-            label="Логин"
-            required
-            onChange={(e, d) => setFormData({ ...formData, login: d.value })}
-          />
-          <TextBox
-            value={formData.password}
-            label="Пароль"
-            type="password"
-            required
-            onChange={(e, d) => setFormData({ ...formData, password: d.value })}
-          />
-          <SubmitButton
-            className={styles.button}
-            loading={loading}
-            appearance="primary"
-          >
-            Войти
-          </SubmitButton>
-        </form>
+        <div className={styles.cardContainer}>
+          <Subtitle2 style={{ color: tokens.colorNeutralForeground2 }}>
+            Веб-инжиниринг
+          </Subtitle2>
+
+          <form className={styles.formContainer} onSubmit={handleSubmit}>
+            <InfoLabel
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+              info="Данные для входа на мой сервер"
+            >
+              <Title3>Вход</Title3>
+            </InfoLabel>
+
+            <TextBox
+              placeholder="Логин"
+              value={formData.login}
+              required
+              onChange={(e, d) => setFormData({ ...formData, login: d.value })}
+            />
+            <TextBox
+              placeholder="Пароль"
+              value={formData.password}
+              type="password"
+              required
+              onChange={(e, d) =>
+                setFormData({ ...formData, password: d.value })
+              }
+            />
+            <SubmitButton
+              className={styles.button}
+              loading={loading}
+              appearance="primary"
+            >
+              Войти
+            </SubmitButton>
+          </form>
+        </div>
       </div>
     </PageTemplate>
   );
