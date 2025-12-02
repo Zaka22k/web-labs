@@ -7,6 +7,7 @@ import {
 } from "@fluentui/react-components";
 import { PageTemplate, TextBox, SubmitButton } from "components";
 import useAuthPage from "./useAuthPage";
+import pageImage from "assets/fluent_web.svg";
 
 const useStyles = makeStyles({
   pageWrapper: {
@@ -15,17 +16,21 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    backgroundImage: `url(${pageImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   },
   cardContainer: {
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    maxWidth: "375px",
+    maxWidth: "400px",
     gap: "8px",
     backgroundColor: tokens.colorNeutralBackground3,
     padding: "32px",
-    borderRadius: "8px",
-    boxShadow: tokens.shadow16,
+    borderRadius: "12px",
+    boxShadow: tokens.shadow28,
   },
   formContainer: {
     display: "flex",

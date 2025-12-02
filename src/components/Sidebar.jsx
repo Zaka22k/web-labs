@@ -9,6 +9,8 @@ import {
   NavSectionHeader,
   NavSubItem,
   NavSubItemGroup,
+  Text,
+  Tooltip,
 } from "@fluentui/react-components";
 import { Home20Regular } from "@fluentui/react-icons";
 import { useNavigate, useParams } from "react-router-dom";
@@ -55,9 +57,11 @@ export default function Sidebar({ open, isMobile, onClose, labs }) {
 function LabItem({ lab }) {
   return (
     <NavCategory value={`lab${lab.code}`}>
-      <NavCategoryItem value={`lab${lab.code}`}>
-        {`${lab.code}. ${lab.title}`}
-      </NavCategoryItem>
+      <Tooltip content={lab.title}>
+        <NavCategoryItem value={`lab${lab.code}`}>
+          <Text truncate wrap={false}>{`${lab.code}. ${lab.title}`}</Text>
+        </NavCategoryItem>
+      </Tooltip>
       <TaskList lab={lab} />
     </NavCategory>
   );
