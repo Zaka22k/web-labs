@@ -1,6 +1,6 @@
 import {
   Body1,
-  Caption1,
+  Body2,
   Divider,
   makeStyles,
   tokens,
@@ -17,6 +17,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import api from "../api";
 import { useNotify } from "context";
+import avatarImg from "assets/avatar.jpg";
 
 const useStyles = makeStyles({
   header: {
@@ -72,17 +73,27 @@ function Header({ onToggle, data }) {
       </div>
       <Popover withArrow>
         <PopoverTrigger disableButtonEnhancement>
-          <Avatar color="dark-red" name={data.fullname} />
+          <Avatar
+            image={{ src: avatarImg }}
+            color="dark-red"
+            size={36}
+            name={data.fullname}
+          />
         </PopoverTrigger>
 
         <PopoverSurface className={styles.popoverContainer} tabIndex={-1}>
           <div className={styles.profileBlock}>
-            <Avatar size={48} color="dark-red" name={data.fullname} />
+            <Avatar
+              size={64}
+              image={{ src: avatarImg }}
+              color="dark-red"
+              name={data.fullname}
+            />
             <div className={styles.infoBlock}>
-              <Body1>{data.fullname}</Body1>
-              <Caption1 style={{ color: tokens.colorNeutralForeground2 }}>
+              <Body2>{data.fullname}</Body2>
+              <Body1 style={{ color: tokens.colorNeutralForeground2 }}>
                 {data.group}
-              </Caption1>
+              </Body1>
             </div>
           </div>
           <Divider />
