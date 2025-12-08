@@ -97,7 +97,14 @@ export function Scores({ sql, python, updated_at }) {
           color: tokens.colorNeutralForeground2,
         }}
       >
-        Обновлено {updated_at}
+        Обновлено{" "}
+        <Body1
+          style={{
+            color: tokens.colorNeutralForeground1,
+          }}
+        >
+          {updated_at}
+        </Body1>
       </Body1>
     </HomeSection>
   );
