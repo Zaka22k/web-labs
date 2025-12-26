@@ -18,14 +18,12 @@ const useStyles = makeStyles({
   },
   content: {
     flex: 1,
+    margin: "0px 8px 8px 0px",
     backgroundColor: tokens.colorNeutralBackground3,
-    borderTop: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
-    borderLeft: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
-    borderRight: "none",
-    borderBottom: "none",
+    border: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
     "@media (max-width: 768px)": {
-      borderTopLeftRadius: "0px",
       border: "none",
+      margin: "0px",
     },
     overflow: "hidden",
     display: "flex",
@@ -60,7 +58,19 @@ export default function Dashboard() {
         />
         <main
           className={styles.content}
-          style={{ borderTopLeftRadius: isOpen ? "16px" : "0px" }}
+          style={
+            isOpen
+              ? {
+                  borderRadius: "16px",
+                  border: `1px solid ${tokens.colorNeutralStrokeSubtle}`,
+                  margin: "0px 8px 8px 0px",
+                }
+              : {
+                  borderRadius: "0px",
+                  border: "none",
+                  margin: "0px",
+                }
+          }
         >
           <Suspense fallback={<PageLoader />}>
             <Outlet />

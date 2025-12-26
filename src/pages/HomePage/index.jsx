@@ -22,7 +22,7 @@ export default function HomePage() {
         <Profile
           fullname={data.fullname}
           group={data.group}
-          onLinkClick={() => navigate("/dashboard/lab1/task1")}
+          onLinkClick={() => navigate("/dashboard/lab1/task10")}
         />
 
         <Progress labCount={labCount} />

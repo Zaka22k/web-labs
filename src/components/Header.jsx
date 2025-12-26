@@ -69,14 +69,14 @@ function Header({ onToggle, data }) {
     <header className={styles.header}>
       <div className={styles.title}>
         <Hamburger onClick={onToggle} />
-        <Subtitle2>Веб-инжиниринг</Subtitle2>
+        <Subtitle2>Основы Web-инжиниринга</Subtitle2>
       </div>
       <Popover withArrow>
         <PopoverTrigger disableButtonEnhancement>
           <Avatar
             image={{ src: avatarImg }}
             color="dark-red"
-            size={36}
+            size={32}
             name={data.fullname}
           />
         </PopoverTrigger>
@@ -84,7 +84,7 @@ function Header({ onToggle, data }) {
         <PopoverSurface className={styles.popoverContainer} tabIndex={-1}>
           <div className={styles.profileBlock}>
             <Avatar
-              size={64}
+              size={48}
               image={{ src: avatarImg }}
               color="dark-red"
               name={data.fullname}

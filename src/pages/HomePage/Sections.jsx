@@ -67,7 +67,7 @@ export function Progress({ labCount }) {
     <HomeSection title="Прогресс по работам">
       <div className={styles.progressContainer}>
         <Body1>Сдано</Body1>
-        <RatingDisplay count={12} color="brand" value={labCount} max={12} />
+        <RatingDisplay count={11} color="brand" value={labCount} max={11} />
       </div>
     </HomeSection>
   );
