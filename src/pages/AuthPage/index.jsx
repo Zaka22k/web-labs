@@ -40,10 +40,6 @@ const useStyles = makeStyles({
   button: {
     marginTop: "24px",
     alignSelf: "end",
-    color: tokens.colorNeutralForegroundInverted,
-    "&:hover": {
-      color: tokens.colorNeutralForegroundInverted,
-    },
   },
 });
 
