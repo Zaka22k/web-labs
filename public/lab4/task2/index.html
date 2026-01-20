@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Задание 2 — Проверка карты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cards" aria-hidden="true">
+      <img src="img/visa.jpg" id="visa" alt="VISA" />
+      <img src="img/mc.jpg" id="mc" alt="MasterCard" />
+      <img src="img/visael.jpg" id="visael" alt="Visa Electron" />
+      <img src="img/maestro.jpg" id="maestro" alt="Maestro" />
+      <img src="img/jcb.jpg" id="jcb" alt="JCB" />
+      <img src="img/mir.jpg" id="mir" alt="МИР" />
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        id="cardNumber"
+        value="4300111122223333"
+        placeholder="Номер карты"
+      />
+      <button id="cardCheck" type="button">Проверить</button>
+    </div>
+    <div id="result"></div>
+    <script src="cards.js" defer></script>
+  </body>
+</html>

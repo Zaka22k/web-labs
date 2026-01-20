@@ -1,0 +1,63 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  color: var(--TextFillColorPrimaryBrush);
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--AccentFillColorDefaultBrush);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.back-link:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-link:active {
+  transform: translateY(0);
+}

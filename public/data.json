@@ -1,0 +1,31 @@
+{
+  "fullname": "Пристёгин Семен Эдуардович",
+  "group": "ИТ2204",
+  "hackerrank_stats": { "python": 2305, "sql": 1130 },
+  "labs": [
+    { "code": 1, "tasks": 10, "title": "Введение в HTML и CSS" },
+    { "code": 2, "tasks": 9, "title": "Основы nginx и вёрстки" },
+    { "code": 3, "tasks": 6, "title": "Продвинутый nginx и Flexbox" },
+    { "code": 4, "tasks": 8, "title": "Введение в JavaScript" },
+    { "code": 5, "tasks": 9, "title": "JavaScript: события, таймеры, формы" },
+    {
+      "code": 6,
+      "tasks": 8,
+      "title": "Получение данных по API. Хранение данных в браузере"
+    },
+    { "code": 7, "tasks": 3, "title": "Основы Node.js + Fastify" },
+    {
+      "code": 8,
+      "tasks": 3,
+      "title": "Файловые операции node.js. Базовая валидация в fastify."
+    },
+    { "code": 9, "tasks": 3, "title": "Основы работы с БД." },
+    {
+      "code": 10,
+      "tasks": 2,
+      "title": "Основы работы с БД: параметризованные запросы, транзакции, динамическое построение запросов"
+    },
+    { "code": 11, "tasks": 3, "title": "Аутентификация с JWT. Авторизация " }
+  ],
+  "updated_at": "19.01.2026"
+}

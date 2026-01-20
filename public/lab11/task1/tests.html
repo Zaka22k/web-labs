@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/tests.css" />
+  </head>
+  <body>
+    <h1>Результаты тестов</h1>
+    <p>
+      <a
+        href="./index.html"
+        style="color: var(--AccentTextFillColorPrimaryBrush)"
+        >Вернуться к начальной странице</a
+      >
+    </p>
+
+    <div class="test-result">
+      <h2>1. Регистрация пользователя</h2>
+
+      <div class="section-title">Запрос (POST /api/lab11/register)</div>
+      <pre>
+POST  http://localhost:3000/api/lab11/register 
+Content-Type: application/json
+
+{
+  "login": "pristegins", 
+  "password": "pristegins" 
+} </pre
+      >
+
+      <div class="section-title">Ответ</div>
+      <pre>
+HTTP/1.1 201 Created
+content-type: application/json; charset=utf-8
+content-length: 81
+Date: Mon, 08 Dec 2025 18:38:59 GMT
+Connection: close
+
+{
+  "id": 6,
+  "login": "pristegins",
+  "role_id": 1,
+  "created_at": "2025-12-08T18:38:59.400Z"
+}</pre
+      >
+    </div>
+
+    <div class="test-result">
+      <h2>2. Логин под этим пользователем</h2>
+
+      <div class="section-title">Запрос (POST /api/lab11/login)</div>
+      <pre>
+POST  http://localhost:3000/api/lab11/login
+Content-Type: application/json
+
+{
+  "login": "pristegins", 
+  "password": "pristegins" 
+} </pre
+      >
+
+      <div class="section-title">Ответ</div>
+      <pre>
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+content-length: 247
+Date: Mon, 08 Dec 2025 18:39:36 GMT
+Connection: close
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibG9naW4iOiJwcmlzdGVnaW5zIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NjUyMTkxNzYsImV4cCI6MTc2NTIyMDA3Nn0.Qc99XVTrevJKhflVara_t6B2DHGzDQIg4Z6ZrMbmwlg",
+  "user": {
+    "id": 6,
+    "login": "pristegins",
+    "role": "user"
+  }
+}
+</pre
+      >
+    </div>
+
+    <div class="test-result">
+      <h2>3. Запрос к /profile (с токеном)</h2>
+
+      <div class="section-title">Запрос (GET /api/lab11/profile)</div>
+      <pre>
+GET http://localhost:3000/api/lab11/profile 
+Authorization: Bearer {{token}}
+</pre
+      >
+
+      <div class="section-title">Ответ</div>
+      <pre>
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+content-length: 43
+Date: Mon, 08 Dec 2025 18:40:21 GMT
+Connection: close
+
+{
+  "id": 6,
+  "login": "pristegins",
+  "role": "user"
+}
+</pre
+      >
+    </div>
+
+    <div class="test-result">
+      <h2>4. Запрос к /admin (с токеном 'user')</h2>
+
+      <div class="section-title">Запрос (GET /api/lab11/admin)</div>
+      <pre>
+GET http://localhost:3000/api/lab11/admin
+Authorization: Bearer {{token}}
+</pre
+      >
+
+      <div class="section-title">Ответ</div>
+      <pre>
+HTTP/1.1 403 Forbidden
+content-type: application/json; charset=utf-8
+content-length: 33
+Date: Mon, 08 Dec 2025 18:40:46 GMT
+Connection: close
+
+{
+  "error": "Forbidden: admin only"
+}
+</pre
+      >
+    </div>
+
+    <div class="test-result">
+      <h2>
+        5. Запрос к /admin (после смены роли на 'admin' и получения нового
+        токена)
+      </h2>
+
+      <div class="section-title">Действия с БД (обновление роли)</div>
+      <pre>
+UPDATE lab11.users
+SET role_id= (SELECT id FROM lab11.roles WHERE name = 'admin')
+WHERE login = 'pristegins';
+</pre
+      >
+
+      <div class="section-title">Запрос (GET /api/lab11/admin)</div>
+      <pre>
+GET http://localhost:3000/api/lab11/admin
+Authorization: Bearer {{token}}
+</pre
+      >
+
+      <div class="section-title">Ответ</div>
+      <pre>
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+content-length: 133
+Date: Mon, 08 Dec 2025 18:42:03 GMT
+Connection: close
+
+{
+  "message": "Добро пожаловать в админский раздел!",
+  "user": {
+    "id": 6,
+    "login": "pristegins",
+    "role": "admin"
+  }
+}
+</pre
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCautionBrush: hsl(36, 100%, 31%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 8px 12px;
+  height: 36px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+.segments-container {
+  display: flex;
+  gap: 4px;
+  height: 6px;
+  width: 100%;
+}
+
+.segment {
+  flex: 1;
+  background: var(--SubtleFillColorSecondaryBrush);
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.score-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.criteria-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.chip {
+  font-size: 11px;
+  padding: 4px 8px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-radius: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+}

@@ -1,0 +1,127 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  background-color: var(--LayerFillColorAltBrush);
+  font-size: 14px;
+  outline: none;
+}
+
+button {
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.1s;
+}
+
+#getWeatherBtn {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+}
+
+#getWeatherBtn:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+#clearCacheBtn {
+  background-color: var(--SystemFillColorCriticalBackgroundBrush);
+  color: var(--SystemFillColorCriticalBrush);
+}
+
+.weather-card {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  min-height: 120px;
+}
+
+.weather-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.weather-card .temp {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.history h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--TextFillColorSecondaryBrush);
+  margin-bottom: 12px;
+}
+
+#historyBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-item {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.history-item:hover {
+  background-color: hsl(0, 0%, 94%);
+}

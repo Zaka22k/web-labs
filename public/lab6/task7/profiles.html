@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сохранённые профили</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Сохранённые профили</h1>
+      <ul id="profilesList"></ul>
+    </div>
+
+    <script>
+      const profilesList = document.getElementById("profilesList");
+
+      function loadProfiles() {
+        const saved = localStorage.getItem("userProfiles");
+        return saved ? JSON.parse(saved) : [];
+      }
+
+      function renderProfiles() {
+        const profiles = loadProfiles();
+        profilesList.innerHTML = "";
+
+        if (profiles.length === 0) {
+          profilesList.innerHTML = '<li class="empty-state">Список пуст</li>';
+          return;
+        }
+
+        profiles.forEach((profile) => {
+          const li = document.createElement("li");
+          li.className = "saved-profile-item";
+          li.innerHTML = `
+            <img src="${profile.picture}" alt="">
+            <div class="saved-info">
+              <div class="name">${profile.name}</div>
+              <div class="details">${profile.gender} • ${profile.email}</div>
+              <div class="details">${profile.country}</div>
+            </div>
+            <button data-id="${profile.id}" class="delete-btn">Удалить</button>
+          `;
+          profilesList.appendChild(li);
+        });
+      }
+
+      profilesList.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+          const id = e.target.dataset.id;
+          let profiles = loadProfiles();
+          profiles = profiles.filter((p) => p.id !== id);
+          localStorage.setItem("userProfiles", JSON.stringify(profiles));
+          renderProfiles();
+        }
+      });
+
+      window.addEventListener("DOMContentLoaded", renderProfiles);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+body {
+  margin: 0;
+  padding: 40px 24px;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--LayerFillColorDefaultBrush);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 0;
+}
+.back-link {
+  color: var(--AccentFillColorDefaultBrush);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--CardStrokeColorDefaultBrush);
+}
+th {
+  background: #f3f3f3;
+  font-size: 13px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qty-controls input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.total-section {
+  text-align: right;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-success {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+}
+
+.btn-danger {
+  color: var(--SystemFillColorCriticalBrush);
+  background: none;
+  border: none;
+}

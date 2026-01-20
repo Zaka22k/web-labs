@@ -77,7 +77,7 @@ function Header({ onToggle, data }) {
             image={{ src: avatarImg }}
             color="dark-red"
             size={32}
-            name={data.fullname}
+            name={data?.fullname || "-"}
           />
         </PopoverTrigger>
 
@@ -87,12 +87,12 @@ function Header({ onToggle, data }) {
               size={48}
               image={{ src: avatarImg }}
               color="dark-red"
-              name={data.fullname}
+              name={data?.fullname || "-"}
             />
             <div className={styles.infoBlock}>
-              <Body2>{data.fullname}</Body2>
+              <Body2>{data?.fullname || "-"}</Body2>
               <Body1 style={{ color: tokens.colorNeutralForeground2 }}>
-                {data.group}
+                {data?.group || "-"}
               </Body1>
             </div>
           </div>

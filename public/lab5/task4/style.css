@@ -1,0 +1,149 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+  padding: 40px 1rem;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+#addContact,
+#contactsList {
+  background: var(--LayerFillColorAltBrush);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 6px 12px;
+  margin-top: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 2px solid var(--ControlElevationBorderBrush);
+  border-radius: 4px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-bottom-color: var(--TextControlElevationBorderFocusedBrush);
+}
+
+input.invalid {
+  border-bottom-color: var(--SystemFillColorCriticalBrush);
+}
+
+button {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+  padding: 6px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+#addBtn {
+  margin-top: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+  font-size: 14px;
+}
+
+th {
+  color: var(--TextFillColorSecondaryBrush);
+  font-weight: 600;
+  vertical-align: top;
+}
+
+th input {
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+tr:hover td {
+  background: var(--SubtleFillColorSecondaryBrush);
+}
+
+#filterBtn {
+  display: block;
+  margin: 20px auto 0;
+  background: var(--ControlAltFillColorSecondaryBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+
+#filterBtn:hover {
+  background: var(--ControlStrokeColorDefaultBrush);
+}

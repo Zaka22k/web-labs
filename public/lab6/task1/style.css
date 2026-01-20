@@ -1,0 +1,78 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorOnAccentDefaultBrush: hsl(0, 0%, 96%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+#load {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid var(--ControlStrokeColorOnAccentDefaultBrush);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  transition: all 0.1s ease-in-out;
+}
+
+#load:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+#load:active {
+  background-color: var(--AccentFillColorTertiaryBrush);
+  transform: scale(0.98);
+}
+
+#status {
+  color: var(--TextFillColorSecondaryBrush);
+  margin-bottom: 16px;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+#cat {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  background-color: var(--LayerFillColorAltBrush);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: opacity 0.3s ease;
+}

@@ -1,0 +1,186 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlFillColorTertiaryBrush: hsl(0, 0%, 90%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.crud-section {
+  background-color: var(--ControlFillColorDefaultBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.crud-section h2 {
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 6px 12px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  outline: none;
+  min-height: 32px;
+}
+
+input:focus,
+select:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+  padding-bottom: 5px;
+}
+
+.btn-success,
+.btn-primary,
+.btn-danger {
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-height: 32px;
+  border: 1px solid transparent;
+  transition: all 0.1s ease;
+}
+
+.btn-primary,
+.btn-success {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+.btn-danger {
+  background-color: var(--SystemFillColorCriticalBackgroundBrush);
+  color: var(--SystemFillColorCriticalBrush);
+  border-color: var(--CardStrokeColorDefaultBrush);
+}
+
+.btn-danger:hover {
+  filter: brightness(0.95);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--ControlFillColorTertiaryBrush);
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.list-item:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+.list-item .item-info strong {
+  color: var(--TextFillColorPrimaryBrush);
+  font-weight: 600;
+}
+
+.list-item .item-info span {
+  color: var(--TextFillColorSecondaryBrush);
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.item-quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-quantity-control label {
+  color: var(--TextFillColorSecondaryBrush);
+  font-size: 14px;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+a {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.message-box {
+  padding: 20px;
+  color: var(--TextFillColorSecondaryBrush);
+  text-align: center;
+}

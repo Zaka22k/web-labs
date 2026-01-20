@@ -1,0 +1,150 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --TextFillColorDisabledBrush: hsl(0, 0%, 61%);
+  --SubtleFillColorDisabledBrush: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 32px 0 16px 0;
+}
+
+.animal-selector {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.animal-selector label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--TextFillColorSecondaryBrush);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  accent-color: var(--AccentFillColorDefaultBrush);
+  width: 18px;
+  height: 18px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+button {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  background-color: var(--AccentFillColorTertiaryBrush);
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: var(--SubtleFillColorDisabledBrush);
+  color: var(--TextFillColorDisabledBrush);
+  cursor: not-allowed;
+}
+
+#favBtn {
+  background-color: var(--SystemFillColorSuccessBackgroundBrush);
+  color: var(--SystemFillColorSuccessBrush);
+  border: 1px solid transparent;
+}
+
+#favBtn:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.image-container {
+  margin-bottom: 24px;
+  line-height: 0;
+}
+
+#animalImg {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  background-color: var(--LayerFillColorAltBrush);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#favoritesList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.favorite-item {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.favorite-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}

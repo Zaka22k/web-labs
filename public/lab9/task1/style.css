@@ -1,0 +1,162 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+body {
+  margin: 0;
+  padding: 40px 24px;
+  font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.stat {
+  background: var(--LayerFillColorAltBrush);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.form-section {
+  background: var(--LayerFillColorAltBrush);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 150px;
+}
+
+label {
+  font-size: 14px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+input[type="text"],
+input[type="number"] {
+  height: 32px;
+  padding: 0 11px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--TextFillColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+.search-section {
+  margin-bottom: 16px;
+}
+#search {
+  width: 100%;
+  max-width: 300px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--LayerFillColorAltBrush);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+}
+
+th {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+
+button {
+  height: 32px;
+  padding: 0 16px;
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--SystemFillColorCriticalBrush);
+  border: 1px solid transparent;
+}
+
+.delete-btn:hover {
+  background: var(--SystemFillColorCriticalBackgroundBrush);
+}

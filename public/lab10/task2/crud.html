@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="css/schedule.css" />
+    <link rel="stylesheet" href="css/crud.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Управление справочниками</h1>
+        <a id="crudLink" href="index.html">← К просмотру расписания</a>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-link active" onclick="showTab('groups')">
+          Группы
+        </button>
+        <button class="tab-link" onclick="showTab('departments')">
+          Кафедры
+        </button>
+        <button class="tab-link" onclick="showTab('positions')">
+          Должности
+        </button>
+        <button class="tab-link" onclick="showTab('buildings')">Корпуса</button>
+        <button class="tab-link" onclick="showTab('subjects')">
+          Дисциплины
+        </button>
+        <button class="tab-link" onclick="showTab('persons')">Лица</button>
+        <button class="tab-link" onclick="showTab('teachers')">
+          Преподаватели
+        </button>
+        <button class="tab-link" onclick="showTab('classrooms')">
+          Аудитории
+        </button>
+        <button class="tab-link" onclick="showTab('schedule')">
+          Расписание
+        </button>
+      </div>
+
+      <div id="groups" class="tab-content active">
+        <h2>Справочник Групп</h2>
+        <form id="groups-form" class="crud-form">
+          <input type="hidden" id="groups-id" name="id" />
+          <input
+            type="text"
+            id="groups-name"
+            name="name"
+            placeholder="Название группы (напр. ПИ-41)"
+            required
+          />
+          <input
+            type="number"
+            id="groups-course"
+            name="course"
+            placeholder="Курс (1-6)"
+            min="1"
+            required
+          />
+          <button type="submit" id="groups-submit" class="btn-success">
+            Создать
+          </button>
+          <button
+            type="button"
+            id="groups-cancel"
+            style="display: none"
+            onclick="resetForm('groups')"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="groups-list" class="crud-list"></div>
+      </div>
+
+      <div id="departments" class="tab-content">
+        <h2>Справочник Кафедр</h2>
+        <form id="departments-form" class="crud-form">
+          <input type="hidden" id="departments-id" name="id" />
+          <input
+            type="text"
+            id="departments-name"
+            name="name"
+            placeholder="Название кафедры (напр. ПИ)"
+            required
+          />
+          <button type="submit" id="departments-submit" class="btn-success">
+            Создать
+          </button>
+          <button
+            type="button"
+            id="departments-cancel"
+            style="display: none"
+            onclick="resetForm('departments')"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="departments-list" class="crud-list"></div>
+      </div>
+
+      <div id="positions" class="tab-content">
+        <h2>Справочник Должностей</h2>
+        <form id="positions-form" class="crud-form">
+          <input type="hidden" id="positions-id" name="id" />
+          <input
+            type="text"
+            id="positions-name"
+            name="name"
+            placeholder="Название должности (напр. Доцент)"
+            required
+          />
+          <button type="submit" id="positions-submit" class="btn-success">
+            Создать
+          </button>
+          <button
+            type="button"
+            id="positions-cancel"
+            style="display: none"
+            onclick="resetForm('positions')"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="positions-list" class="crud-list"></div>
+      </div>
+
+      <div id="buildings" class="tab-content">
+        <h2>Справочник Корпусов</h2>
+        <form id="buildings-form" class="crud-form">
+          <input type="hidden" id="buildings-id" name="id" />
+          <input
+            type="text"
+            id="buildings-name"
+            name="name"
+            placeholder="Название корпуса (напр. Главный)"
+            required
+          />
+          <button type="submit" id="buildings-submit" class="btn-success">
+            Создать
+          </button>
+          <button
+            type="button"
+            id="buildings-cancel"
+            style="display: none"
+            onclick="resetForm('buildings')"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="buildings-list" class="crud-list"></div>
+      </div>
+
+      <div id="subjects" class="tab-content">
+        <h2>Справочник Дисциплин</h2>
+        <form id="subjects-form" class="crud-form">
+          <input type="hidden" id="subjects-id" name="id" />
+          <input
+            type="text"
+            id="subjects-name"
+            name="name"
+            placeholder="Название дисциплины (напр. Базы данных)"
+            required
+          />
+          <button type="submit" id="subjects-submit" class="btn-success">
+            Создать
+          </button>
+          <button
+            type="button"
+            id="subjects-cancel"
+            style="display: none"
+            onclick="resetForm('subjects')"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="subjects-list" class="crud-list"></div>
+      </div>
+
+      <div id="persons" class="tab-content">
+        <h2>Справочник Физических Лиц</h2>
+        <form id="persons-form" class="crud-form grid-form">
+          <input type="hidden" id="persons-id" name="id" />
+          <label for="persons-last_name">Фамилия:</label>
+          <label for="persons-first_name">Имя:</label>
+          <label for="persons-middle_name">Отчество:</label>
+          <label for="persons-email">Email:</label>
+
+          <input
+            type="text"
+            id="persons-last_name"
+            name="last_name"
+            required
+            placeholder="Иванов"
+          />
+          <input
+            type="text"
+            id="persons-first_name"
+            name="first_name"
+            required
+            placeholder="Иван"
+          />
+          <input
+            type="text"
+            id="persons-middle_name"
+            name="middle_name"
+            placeholder="Иванович"
+          />
+          <input
+            type="email"
+            id="persons-email"
+            name="email"
+            placeholder="i.ivanov@uni.ru"
+          />
+
+          <button
+            type="submit"
+            id="persons-submit"
+            class="grid-span-full btn-success"
+          >
+            Создать
+          </button>
+          <button
+            type="button"
+            id="persons-cancel"
+            style="display: none"
+            onclick="resetForm('persons')"
+            class="grid-span-full"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="persons-list" class="crud-list"></div>
+      </div>
+
+      <div id="teachers" class="tab-content">
+        <h2>Справочник Преподавателей</h2>
+        <form
+          id="teachers-form"
+          class="crud-form grid-form"
+          style="grid-template-columns: repeat(3, 1fr)"
+        >
+          <input type="hidden" id="teachers-id" name="id" />
+
+          <label for="teachers-person_id">Физ. лицо:</label>
+          <label for="teachers-department_id">Кафедра:</label>
+          <label for="teachers-position_id">Должность:</label>
+
+          <select id="teachers-person_id" name="person_id" required></select>
+          <select
+            id="teachers-department_id"
+            name="department_id"
+            required
+          ></select>
+          <select
+            id="teachers-position_id"
+            name="position_id"
+            required
+          ></select>
+
+          <button
+            type="submit"
+            id="teachers-submit"
+            class="grid-span-full btn-success"
+          >
+            Создать
+          </button>
+          <button
+            type="button"
+            id="teachers-cancel"
+            style="display: none"
+            onclick="resetForm('teachers')"
+            class="grid-span-full"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="teachers-list" class="crud-list"></div>
+      </div>
+
+      <div id="classrooms" class="tab-content">
+        <h2>Справочник Аудиторий</h2>
+        <form
+          id="classrooms-form"
+          class="crud-form grid-form"
+          style="grid-template-columns: repeat(3, 1fr)"
+        >
+          <input type="hidden" id="classrooms-id" name="id" />
+          <label for="classrooms-number">Номер:</label>
+          <label for="classrooms-building_id">Корпус:</label>
+          <label for="classrooms-capacity">Вместимость:</label>
+
+          <input
+            type="text"
+            id="classrooms-number"
+            name="number"
+            required
+            placeholder="105A"
+          />
+          <select
+            id="classrooms-building_id"
+            name="building_id"
+            required
+          ></select>
+          <input
+            type="number"
+            id="classrooms-capacity"
+            name="capacity"
+            min="0"
+            placeholder="50"
+            required
+            value="0"
+          />
+
+          <button
+            type="submit"
+            id="classrooms-submit"
+            class="grid-span-full btn-success"
+          >
+            Создать
+          </button>
+          <button
+            type="button"
+            id="classrooms-cancel"
+            style="display: none"
+            onclick="resetForm('classrooms')"
+            class="grid-span-full"
+          >
+            Отмена
+          </button>
+        </form>
+        <div id="classrooms-list" class="crud-list"></div>
+      </div>
+
+      <div id="schedule" class="tab-content">
+        <h2>Управление Расписанием</h2>
+        <form id="schedule-form" class="crud-form grid-form">
+          <input type="hidden" id="schedule-id" name="id" />
+
+          <label for="schedule-teacher">Преподаватель:</label>
+          <select id="schedule-teacher" name="teacher_id" required></select>
+
+          <label for="schedule-group">Группа:</label>
+          <select id="schedule-group" name="group_id" required></select>
+
+          <label for="schedule-subject">Дисциплина:</label>
+          <select id="schedule-subject" name="subject_id" required></select>
+
+          <label for="schedule-classroom">Аудитория:</label>
+          <select id="schedule-classroom" name="classroom_id" required></select>
+
+          <label for="schedule-day">День недели:</label>
+          <select id="schedule-day" name="day_of_week" required>
+            <option value="1">Понедельник</option>
+            <option value="2">Вторник</option>
+            <option value="3">Среда</option>
+            <option value="4">Четверг</option>
+            <option value="5">Пятница</option>
+            <option value="6">Суббота</option>
+            <option value="7">Воскресенье</option>
+          </select>
+
+          <label for="schedule-type">Тип занятия:</label>
+          <select id="schedule-type" name="lesson_type" required>
+            <option value="Лекция">Лекция</option>
+            <option value="Практика">Практика</option>
+            <option value="Лабораторная">Лабораторная</option>
+          </select>
+
+          <label for="schedule-start">Начало:</label>
+          <input type="time" id="schedule-start" name="start_time" required />
+
+          <label for="schedule-end">Окончание:</label>
+          <input type="time" id="schedule-end" name="end_time" required />
+
+          <button
+            type="submit"
+            id="schedule-submit"
+            class="grid-span-full btn-success"
+          >
+            Создать запись
+          </button>
+          <button
+            type="button"
+            id="schedule-cancel"
+            style="display: none"
+            onclick="resetForm('schedule')"
+            class="grid-span-full"
+          >
+            Отмена
+          </button>
+        </form>
+
+        <div id="schedule-list" class="crud-list"></div>
+      </div>
+    </div>
+    <script src="js/crud.js" defer></script>
+    <script>
+      function showTab(tabName) {
+        document.querySelectorAll(".tab-content").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+        document.querySelectorAll(".tab-link").forEach((link) => {
+          link.classList.remove("active");
+        });
+
+        document.getElementById(tabName).classList.add("active");
+        document
+          .querySelector(`.tab-link[onclick="showTab('${tabName}')"]`)
+          .classList.add("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 6</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="password-generator">
+      <h1>Генератор паролей</h1>
+
+      <label>
+        Длина пароля (6–32):
+        <input type="number" id="length" min="6" max="32" value="12" />
+      </label>
+
+      <fieldset>
+        <legend>Настройки символов</legend>
+        <label
+          ><input type="checkbox" id="lowercase" checked /> Строчные
+          буквы</label
+        >
+        <label
+          ><input type="checkbox" id="uppercase" checked /> Заглавные
+          буквы</label
+        >
+        <label><input type="checkbox" id="numbers" checked /> Цифры</label>
+        <label><input type="checkbox" id="symbols" /> Спецсимволы (!@#$)</label>
+      </fieldset>
+
+      <button id="generate">Сгенерировать пароль</button>
+
+      <div class="output">
+        <input type="text" id="password" readonly placeholder="Ваш пароль" />
+        <button id="copy">Копировать</button>
+      </div>
+    </section>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", sans-serif;
+  margin: 32px;
+  line-height: 1.5;
+}
+
+h1 {
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+table {
+  border-collapse: collapse;
+  width: auto;
+  min-width: 400px;
+  background-color: var(--LayerFillColorAltBrush);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),
+    0 0 1px var(--CardStrokeColorDefaultBrush);
+  border-radius: 4px;
+}
+
+th {
+  background-color: var(--SubtleFillColorSecondaryBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+}
+
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+  color: var(--TextFillColorSecondaryBrush);
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: var(--SubtleFillColorTertiaryBrush);
+}
+
+td[rowspan] {
+  background-color: var(--LayerOnAcrylicFillColorDefaultBrush);
+  color: var(--AccentTextFillColorPrimaryBrush);
+  font-weight: 500;
+  border-right: 1px solid var(--DividerStrokeColorDefaultBrush);
+}
+
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --TextFillColorDisabledBrush: hsl(0, 0%, 61%);
+
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --AccentTextFillColorSecondaryBrush: hsl(225, 100%, 20%);
+  --AccentTextFillColorTertiaryBrush: hsl(208, 100%, 38%);
+  --AccentTextFillColorDisabledBrush: hsl(0, 0%, 61%);
+
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --TextOnAccentFillColorSecondaryBrush: hsl(0, 0%, 98%);
+  --TextOnAccentFillColorDisabledBrush: hsl(0, 0%, 100%);
+  --TextOnAccentFillColorSelectedTextBrush: hsl(0, 0%, 100%);
+
+  --ControlAltFillColorTransparentBrush: transparent;
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlAltFillColorTertiaryBrush: hsl(0, 0%, 90%);
+  --ControlAltFillColorQuarternaryBrush: hsl(0, 0%, 86%);
+  --ControlAltFillColorDisabledBrush: hsl(0, 0%, 95%);
+
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+
+  --ControlStrongFillColorDefaultBrush: hsl(0, 0%, 53%);
+  --ControlStrongFillColorDisabledBrush: hsl(0, 0%, 65%);
+
+  --SubtleFillColorTransparentBrush: transparent;
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --SubtleFillColorTertiaryBrush: hsl(0, 0%, 93%);
+  --SubtleFillColorDisabledBrush: hsl(0, 0%, 95%);
+
+  --ControlOnImageFillColorDefaultBrush: hsl(0, 0%, 99%);
+  --ControlOnImageFillColorSecondaryBrush: hsl(0, 0%, 95%);
+  --ControlOnImageFillColorTertiaryBrush: hsl(0, 0%, 92%);
+  --ControlOnImageFillColorDisabledBrush: hsl(0, 0%, 95%);
+
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --AccentFillColorDisabledBrush: hsl(0, 0%, 75%);
+  --AccentFillColorSelectedTextBackgroundBrush: hsl(206, 100%, 42%);
+
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --CardStrokeColorDefaultSolidBrush: hsl(0, 0%, 92%);
+
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --TextControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --AccentControlElevationBorderBrush: hsl(0, 0%, 73%);
+
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --ControlStrokeColorOnAccentDefaultBrush: hsl(0, 0%, 96%);
+  --ControlStrokeColorOnAccentSecondaryBrush: hsl(0, 0%, 57%);
+  --ControlStrokeColorOnAccentTertiaryBrush: hsl(0, 0%, 75%);
+  --ControlStrokeColorOnAccentDisabledBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorForStrongFillWhenOnImageBrush: hsl(0, 0%, 97%);
+
+  --ControlStrongStrokeColorDefaultBrush: hsl(0, 0%, 53%);
+  --ControlStrongStrokeColorDisabledBrush: hsl(0, 0%, 75%);
+
+  --SurfaceStrokeColorDefaultBrush: hsl(0, 0%, 76%);
+  --SurfaceStrokeColorFlyoutBrush: hsl(0, 0%, 90%);
+
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+
+  --FocusStrokeColorOuterBrush: hsl(0, 0%, 10%);
+  --FocusStrokeColorInnerBrush: hsl(0, 0%, 98%);
+
+  --CardBackgroundFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --CardBackgroundFillColorSecondaryBrush: hsl(0, 0%, 96%);
+
+  --SmokeFillColorDefaultBrush: hsl(0, 0%, 67%);
+
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+
+  --LayerOnAcrylicFillColorDefaultBrush: hsl(0, 0%, 96%);
+
+  --SolidBackgroundFillColorBaseBrush: hsl(0, 0%, 95%);
+  --SolidBackgroundFillColorBaseAltBrush: hsl(0, 0%, 85%);
+  --SolidBackgroundFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --SolidBackgroundFillColorTertiaryBrush: hsl(0, 0%, 98%);
+
+  --AcrylicBackgroundFillColorBaseBrush: hsl(0, 0%, 93%);
+  --AcrylicBackgroundFillColorDefaultBrush: hsl(0, 0%, 98%);
+
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCautionBrush: hsl(36, 100%, 31%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCautionBackgroundBrush: hsl(47, 100%, 90%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+
+  --SystemFillColorAttentionBrush: hsl(206, 100%, 42%);
+  --SystemFillColorNeutralBrush: hsl(0, 0%, 53%);
+  --SystemFillColorSolidNeutralBrush: hsl(0, 0%, 54%);
+
+  --SystemFillColorAttentionBackgroundBrush: hsl(0, 0%, 96%);
+  --SystemFillColorNeutralBackgroundBrush: hsl(0, 0%, 93%);
+  --SystemFillColorSolidNeutralBackgroundBrush: hsl(0, 0%, 95%);
+  --SystemFillColorSolidAttentionBackgroundBrush: hsl(0, 0%, 97%);
+}

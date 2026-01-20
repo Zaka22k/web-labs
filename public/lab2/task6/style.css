@@ -1,0 +1,113 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  max-width: 1400px;
+  border-spacing: 20px;
+  border-collapse: separate;
+}
+
+thead th {
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  height: 580px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  background-color: var(--LayerFillColorAltBrush);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+td {
+  padding: 0;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  thead th {
+    margin-bottom: 1rem;
+    height: auto;
+  }
+
+  td {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    height: auto;
+    max-height: 500px;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доступ запрещён</title>
+    <style>
+      :root {
+        --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+        --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+        --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+        --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+        --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+        --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+        --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--LayerFillColorDefaultBrush);
+        color: var(--TextFillColorPrimaryBrush);
+        font-family: "Segoe UI Variable Display", "Segoe UI", system-ui,
+          sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .container {
+        text-align: center;
+        background-color: var(--LayerFillColorAltBrush);
+        padding: 3rem 2rem;
+        border-radius: 8px;
+        border: 1px solid var(--CardStrokeColorDefaultBrush);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.12);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h1 {
+        color: var(--SystemFillColorCriticalBrush);
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        color: var(--TextFillColorSecondaryBrush);
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+
+      .code-info {
+        font-family: "Cascadia Code", monospace;
+        font-size: 0.875rem;
+        color: var(--TextFillColorSecondaryBrush);
+        padding: 8px 12px;
+        background-color: var(--LayerFillColorDefaultBrush);
+        border-radius: 4px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ошибка 403</h1>
+      <h2>Доступ запрещён: у вас нет прав для просмотра содержимого.</h2>
+      <div class="code-info">HTTP 403 Forbidden</div>
+    </div>
+  </body>
+</html>

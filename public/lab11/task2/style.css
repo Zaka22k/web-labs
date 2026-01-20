@@ -1,0 +1,216 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+body {
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  margin: 0;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.card {
+  background: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.description-text {
+  color: var(--TextFillColorTertiaryBrush);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.login-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#view-user {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.field-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.action-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+input,
+select {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom-color: var(--ControlStrokeColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+button {
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  transition: all 0.1s ease;
+}
+
+.btn-primary {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+.btn-secondary {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.btn-secondary:hover {
+  background: var(--SubtleFillColorSecondaryBrush);
+}
+
+.btn-danger {
+  color: var(--SystemFillColorCriticalBrush);
+  background: transparent;
+}
+.btn-danger:hover {
+  background: var(--SystemFillColorCriticalBackgroundBrush);
+}
+
+.header-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--TextFillColorSecondaryBrush);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+}
+td {
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background: var(--SubtleFillColorSecondaryBrush);
+}
+
+.msg {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+.msg-success {
+  background: var(--SystemFillColorSuccessBackgroundBrush);
+  color: var(--SystemFillColorSuccessBrush);
+}
+.msg-error {
+  background: var(--SystemFillColorCriticalBackgroundBrush);
+  color: var(--SystemFillColorCriticalBrush);
+}
+
+.role-badge {
+  font-weight: 600;
+  font-size: 12px;
+}
+.self-tag {
+  color: var(--TextFillColorTertiaryBrush);
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 8px;
+}

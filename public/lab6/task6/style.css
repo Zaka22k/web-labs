@@ -1,0 +1,176 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--LayerFillColorAltBrush);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+h1,
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  background-color: var(--ControlSolidFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-bottom: 2px solid var(--TextControlElevationBorderFocusedBrush);
+  padding-bottom: 5px;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--AccentFillColorDefaultBrush);
+  width: 16px;
+  height: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+
+#saveBtn {
+  background-color: var(--SystemFillColorSuccessBackgroundBrush);
+  color: var(--SystemFillColorSuccessBrush);
+  border-color: transparent;
+}
+
+#saveBtn:hover {
+  filter: brightness(0.97);
+}
+
+button[type="submit"] {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+td {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--DividerStrokeColorDefaultBrush);
+  font-size: 14px;
+}
+
+td:first-child {
+  color: var(--TextFillColorSecondaryBrush);
+  width: 40%;
+}
+
+td:last-child {
+  color: var(--TextFillColorPrimaryBrush);
+  font-weight: 500;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}

@@ -1,0 +1,131 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlAltFillColorTertiaryBrush: hsl(0, 0%, 90%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 24px;
+  min-height: 100vh;
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"],
+select {
+  height: 32px;
+  padding: 0 11px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom-color: var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.1s ease;
+}
+
+input[type="number"]:hover,
+select:hover {
+  background: var(--ControlAltFillColorSecondaryBrush);
+}
+
+input[type="number"]:focus,
+select:focus {
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border-bottom: 2px solid var(--TextControlElevationBorderFocusedBrush);
+  padding-bottom: -1px;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+button {
+  height: 32px;
+  margin-top: 8px;
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  background: var(--AccentFillColorTertiaryBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  opacity: 0.8;
+}
+
+#result {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+  transition: all 0.2s ease;
+}

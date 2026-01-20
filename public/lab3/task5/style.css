@@ -1,0 +1,54 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --CardBackgroundFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
+    sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  background-color: var(--CardBackgroundFillColorDefaultBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlElevationBorderBrush);
+  border-radius: 4px;
+  min-height: 220px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--TextFillColorPrimaryBrush);
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.13),
+    0 0.3px 0.9px 0 rgba(0, 0, 0, 0.11);
+  transition: all 0.1s ease-in-out;
+}
+
+.card:hover {
+  background-color: var(--SubtleFillColorSecondaryBrush);
+  box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.13),
+    0 1.2px 3.6px 0 rgba(0, 0, 0, 0.11);
+}

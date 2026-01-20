@@ -1,0 +1,113 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+#registrationForm {
+  background: var(--LayerFillColorAltBrush);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+input,
+select {
+  padding: 8px 12px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 2px solid var(--ControlElevationBorderBrush);
+  border-radius: 4px;
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-bottom-color: var(--TextControlElevationBorderFocusedBrush);
+}
+
+/* Стилизация при невалидности (браузерная) */
+input:invalid:not(:placeholder-shown) {
+  border-bottom-color: var(--SystemFillColorCriticalBrush);
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+option {
+  background: var(--LayerFillColorAltBrush);
+  color: var(--TextFillColorPrimaryBrush);
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Задание 1</h1>
+      <p>
+        <a
+          href="./tests.html"
+          style="color: var(--AccentTextFillColorPrimaryBrush)"
+          >Перейти к странице результатов тестов</a
+        >
+      </p>
+
+      <div class="current-state-box">
+        <h2>Текущая сессия</h2>
+        <p><strong>Пользователь:</strong> <span id="current-user">нет</span></p>
+        <p>
+          <strong>JWT-токен:</strong>
+          <button id="btn-logout" type="button">Выйти</button>
+        </p>
+        <pre class="token" id="current-token">нет токена</pre>
+      </div>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="auth">
+            Аутентификация
+          </button>
+          <button class="tab-button" data-tab="secure">
+            Защищенные сервисы
+          </button>
+        </div>
+
+        <div id="tab-auth" class="tab-content active">
+          <div class="box">
+            <h3>Регистрация</h3>
+            <form id="form-register">
+              <label
+                >Логин:<input type="text" id="reg-login" value="newuser"
+              /></label>
+              <label
+                >Пароль:<input
+                  type="password"
+                  id="reg-password"
+                  value="pass12345"
+              /></label>
+              <button type="submit">Зарегистрироваться</button>
+            </form>
+            <div id="reg-message" class="success"></div>
+            <div id="reg-error" class="error"></div>
+          </div>
+
+          <div class="box">
+            <h3>Вход в систему</h3>
+            <form id="form-login">
+              <label
+                >Логин:<input type="text" id="login-login" value="newuser"
+              /></label>
+              <label
+                >Пароль:<input
+                  type="password"
+                  id="login-password"
+                  value="pass12345"
+              /></label>
+              <button type="submit">Войти</button>
+            </form>
+            <div id="login-message" class="success"></div>
+            <div id="login-error" class="error"></div>
+          </div>
+        </div>
+
+        <div id="tab-secure" class="tab-content">
+          <div class="box">
+            <h3>Смена пароля</h3>
+            <form id="form-change-password">
+              <label>
+                Текущий пароль:<br />
+                <input type="password" id="old-password" />
+              </label>
+              <label>
+                Новый пароль (минимум 6 символов):<br />
+                <input type="password" id="new-password" />
+              </label>
+              <button type="submit" id="btn-change-password" disabled>
+                Сменить пароль
+              </button>
+            </form>
+            <div id="pass-message" class="success"></div>
+            <div id="pass-error" class="error"></div>
+          </div>
+
+          <div class="box">
+            <h3>Проверка доступа</h3>
+
+            <h4>/profile</h4>
+            <button id="btn-profile" type="button" disabled="">
+              GET /profile
+            </button>
+            <div id="profile-result"></div>
+
+            <h4 style="margin-top: 20px">/admin</h4>
+            <button id="btn-admin" type="button" disabled="">GET /admin</button>
+            <div id="admin-result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

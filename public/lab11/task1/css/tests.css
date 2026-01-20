@@ -1,0 +1,69 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+}
+
+body {
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+a {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.test-result {
+  background: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+pre {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  overflow: auto;
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+  margin: 8px 0 20px 0;
+}
+
+.section-title {
+  color: var(--TextFillColorSecondaryBrush);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

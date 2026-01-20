@@ -1,0 +1,212 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px 24px;
+  min-height: 100vh;
+  font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  font-size: 14px;
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 360px;
+}
+
+input[type="text"],
+select {
+  height: 32px;
+  padding: 0 11px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom-color: var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.1s ease;
+}
+
+input[type="text"]:hover,
+select:hover {
+  background: var(--ControlAltFillColorSecondaryBrush);
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-bottom: 2px solid var(--TextControlElevationBorderFocusedBrush);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.radio-group {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-group > label {
+  font-weight: 600;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.radio-option,
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  transition: all 0.1s;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background: var(--AccentFillColorDefaultBrush);
+  border-color: var(--AccentFillColorDefaultBrush);
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 4px;
+  background: var(--TextOnAccentFillColorPrimaryBrush);
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  font-size: 12px;
+  height: 100%;
+}
+
+#projectName {
+  display: none;
+}
+
+#projectName.visible {
+  display: block;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  height: 32px;
+  margin-top: 12px;
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  background: var(--AccentFillColorTertiaryBrush);
+  opacity: 0.8;
+}
+
+#result {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+#result.success {
+  background: var(--SystemFillColorSuccessBackgroundBrush);
+  color: var(--SystemFillColorSuccessBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+
+#result.error {
+  background: var(--SystemFillColorCriticalBackgroundBrush);
+  color: var(--SystemFillColorCriticalBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}

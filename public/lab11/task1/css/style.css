@@ -1,0 +1,196 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --AccentFillColorDisabledBrush: hsl(0, 0%, 75%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorSuccessBackgroundBrush: hsl(115, 58%, 92%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+}
+
+body {
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  margin: 0;
+  padding: 32px;
+}
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.current-state-box {
+  background: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.tabs {
+  margin-top: 32px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--TextFillColorSecondaryBrush);
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-button:hover {
+  background: var(--SubtleFillColorSecondaryBrush);
+}
+
+.tab-button.active {
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  background: var(--AccentFillColorDefaultBrush);
+  border-radius: 3px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.box {
+  background: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+button {
+  padding: 6px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  background: var(--AccentFillColorTertiaryBrush);
+}
+
+button:disabled {
+  background: var(--AccentFillColorDisabledBrush);
+  cursor: not-allowed;
+}
+
+#btn-logout {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  margin-left: 12px;
+}
+
+.error,
+.success {
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+}
+
+.error {
+  color: var(--SystemFillColorCriticalBrush);
+  background: var(--SystemFillColorCriticalBackgroundBrush);
+}
+
+.success {
+  color: var(--SystemFillColorSuccessBrush);
+  background: var(--SystemFillColorSuccessBackgroundBrush);
+}
+
+pre {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  overflow: auto;
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+}

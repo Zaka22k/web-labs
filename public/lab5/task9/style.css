@@ -1,0 +1,133 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCautionBrush: hsl(36, 100%, 31%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 1rem;
+  min-height: 100vh;
+}
+
+#orderForm {
+  background: var(--LayerFillColorAltBrush);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  padding: 8px 12px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 2px solid var(--ControlStrokeColorDefaultBrush);
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-bottom-color: var(--AccentFillColorDefaultBrush);
+}
+
+.error-msg {
+  font-size: 12px;
+  color: var(--SystemFillColorCriticalBrush);
+  min-height: 16px;
+}
+
+.warning-msg {
+  font-size: 12px;
+  color: var(--SystemFillColorCautionBrush);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+button {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+#addressLabel {
+  display: none;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

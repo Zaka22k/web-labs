@@ -5,8 +5,11 @@ export default function useHomePage() {
   const navigate = useNavigate();
   const { data } = useData();
 
-  const labCount = data.labs.length;
-  const { sql, python } = data.hackerrank_stats;
+  const labCount = data?.labs.length || 0;
+  const { sql, python } = data?.hackerrank_stats || {
+    sql: 0,
+    python: 0,
+  };
 
   return {
     navigate,

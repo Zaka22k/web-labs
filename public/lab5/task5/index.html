@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 5</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <input type="text" id="display" placeholder="0" disabled />
+
+      <div class="buttons">
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="op">/</button>
+
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="op">*</button>
+
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="op">-</button>
+
+        <button class="num">0</button>
+        <button id="dot">.</button>
+        <button id="clear">C</button>
+        <button class="op">+</button>
+
+        <button class="op" id="sqrt">√</button>
+        <button class="op" id="log">log</button>
+        <button id="equals">=</button>
+      </div>
+
+      <div id="logBaseContainer" style="display: none">
+        <label
+          >Основание логарифма:
+          <input type="text" id="logBase" placeholder="число > 0, ≠1"
+        /></label>
+      </div>
+
+      <label>
+        <input type="checkbox" id="roundResult" /> Округлить до 3 знаков
+      </label>
+
+      <div id="result" aria-live="polite"></div>
+    </section>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

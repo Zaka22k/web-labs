@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Задание 4</h1>
+      <p>Фрагмент конфигурации nginx для обработки ошибок:</p>
+      <pre class="code-block">
+error_page 404 /404.html;
+
+location = /404.html {
+    internal;
+    root /usr/share/nginx/html/lab2/task4;
+}
+      </pre>
+    </div>
+  </body>
+</html>

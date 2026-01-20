@@ -1,0 +1,188 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --SolidBackgroundFillColorBaseBrush: hsl(0, 0%, 95%);
+  --SystemFillColorCautionBrush: hsl(36, 100%, 31%);
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#auth-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#loginForm {
+  display: flex;
+  gap: 8px;
+}
+
+#crudLink {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+#crudLink:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+  border-color: var(--ControlStrokeColorSecondaryBrush);
+}
+
+#crudLink {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  padding: 6px 12px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+button {
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  background-color: var(--ControlFillColorDefaultBrush);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+#loginForm button,
+.btn-primary {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+}
+
+.filter-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  margin-bottom: 32px;
+}
+
+.filter-controls label {
+  display: block;
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+  margin-bottom: 4px;
+}
+
+.day-section {
+  margin-bottom: 24px;
+}
+
+.day-header {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  margin-bottom: 12px;
+  color: var(--AccentTextFillColorPrimaryBrush);
+}
+
+.lesson-card {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  border-bottom: 1px solid var(--CardStrokeColorDefaultBrush);
+  align-items: center;
+}
+
+.lesson-card:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+.time-block {
+  font-weight: 600;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.info-block h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.info-block p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--SolidBackgroundFillColorBaseBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+}
+
+.hidden {
+  display: none !important;
+}

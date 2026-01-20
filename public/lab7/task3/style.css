@@ -1,0 +1,91 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --FocusStrokeColorOuterBrush: hsl(0, 0%, 10%);
+  --FocusStrokeColorInnerBrush: hsl(0, 0%, 98%);
+  --ControlStrokeColorOnAccentDefaultBrush: hsl(0, 0%, 96%);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.task-box {
+  width: 380px;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.task-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  min-width: 120px;
+  padding: 0 20px;
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid var(--ControlStrokeColorOnAccentDefaultBrush);
+  border-bottom-width: 2px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+.button:active {
+  background: var(--AccentFillColorTertiaryBrush);
+  transform: scale(0.98);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--FocusStrokeColorOuterBrush);
+  outline-offset: 2px;
+}
+
+.hidden-visually {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

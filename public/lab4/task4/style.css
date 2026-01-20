@@ -1,0 +1,115 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --CardBackgroundFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1rem;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+select {
+  padding: 6px 12px;
+  height: 32px;
+  min-width: 200px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--TextFillColorPrimaryBrush);
+  outline: none;
+  cursor: pointer;
+}
+
+select:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+.clocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.clock {
+  flex: 1 1 200px;
+  max-width: 240px;
+  padding: 20px;
+  background-color: var(--CardBackgroundFillColorDefaultBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlElevationBorderBrush);
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clock.active {
+  background-color: var(--SubtleFillColorSecondaryBrush);
+  border: 2px solid var(--AccentFillColorDefaultBrush);
+  transform: scale(1.02);
+  box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.13);
+}
+
+.label {
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+.time {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--TextFillColorPrimaryBrush);
+  font-variant-numeric: tabular-nums;
+}
+
+.clock.active .time {
+  color: var(--AccentTextFillColorPrimaryBrush);
+}

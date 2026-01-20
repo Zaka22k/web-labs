@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Управление справочниками</h1>
+        <a href="index.html">Вернуться в магазин</a>
+      </div>
+
+      <div class="crud-section">
+        <h2>Категории</h2>
+        <div class="form-control">
+          <input
+            type="text"
+            id="category-name"
+            placeholder="Название категории"
+          />
+          <button
+            id="add-category-btn"
+            class="btn-success"
+            onclick="addCategory()"
+          >
+            Добавить
+          </button>
+        </div>
+        <div id="categories-list" class="list-container">
+          <p class="message-box">Загрузка категорий...</p>
+        </div>
+      </div>
+
+      <div class="crud-section">
+        <h2>Товары</h2>
+        <div id="product-form-container" class="form-container"></div>
+        <div id="products-admin-list" class="list-container">
+          <p class="message-box">Загрузка товаров...</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/admin.js" defer></script>
+  </body>
+</html>

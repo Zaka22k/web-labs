@@ -1,0 +1,110 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+input {
+  width: 280px;
+  padding: 6px 12px;
+  height: 32px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+button {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid transparent;
+  padding: 0 16px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+.criteria-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.criterion {
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  line-height: 1.4;
+}
+
+.criterion.success {
+  border-left: 4px solid var(--SystemFillColorSuccessBrush);
+}
+.criterion.error {
+  border-left: 4px solid var(--SystemFillColorCriticalBrush);
+}
+
+.total-score {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.total-score span {
+  color: var(--AccentFillColorDefaultBrush);
+}

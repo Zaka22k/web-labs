@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="css/schedule.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Расписание</h1>
+
+        <div id="auth-container">
+          <form id="loginForm">
+            <input
+              type="text"
+              id="loginUsername"
+              placeholder="Логин"
+              required
+            />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Пароль"
+              required
+            />
+            <button type="submit">Войти</button>
+          </form>
+
+          <div id="loggedInContainer" class="hidden">
+            Привет, <strong id="loggedInUsername"></strong>!
+            <a id="crudLink" href="crud.html" class="hidden"
+              >Редактирование справочников</a
+            >
+            <button id="logoutButton">Выход</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="filters" class="filter-controls">
+        <label for="course">Курс:</label>
+        <select id="course" required onchange="loadSchedule()">
+          <option value="4" selected>4 курс</option>
+          <option value="1">1 курс</option>
+          <option value="2">2 курс</option>
+          <option value="3">3 курс</option>
+        </select>
+
+        <label for="group">Группа:</label>
+        <select id="group" onchange="loadSchedule()">
+          <option value="">Все</option>
+        </select>
+
+        <label for="day">День:</label>
+        <select id="day" onchange="loadSchedule()">
+          <option value="">Все</option>
+          <option value="1">Понедельник</option>
+          <option value="2">Вторник</option>
+          <option value="3">Среда</option>
+          <option value="4">Четверг</option>
+          <option value="5">Пятница</option>
+          <option value="6">Суббота</option>
+        </select>
+
+        <label for="teacher">Преподаватель:</label>
+        <select id="teacher" onchange="loadSchedule()">
+          <option value="">Все</option>
+        </select>
+
+        <label for="subject">Дисциплина:</label>
+        <select id="subject" onchange="loadSchedule()">
+          <option value="">Все</option>
+        </select>
+
+        <label for="type">Тип:</label>
+        <select id="type" onchange="loadSchedule()">
+          <option value="">Все</option>
+        </select>
+
+        <label for="classroom">Аудитория:</label>
+        <select id="classroom" onchange="loadSchedule()">
+          <option value="">Все</option>
+        </select>
+      </div>
+
+      <div id="schedule-output" class="schedule-grid">
+        <p>Выберите курс для отображения расписания.</p>
+      </div>
+    </div>
+    <script src="js/schedule.js" defer></script>
+  </body>
+</html>

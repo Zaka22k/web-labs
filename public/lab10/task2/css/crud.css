@@ -1,0 +1,167 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--ControlStrokeColorDefaultBrush);
+  padding-bottom: 4px;
+}
+
+.tab-link {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--TextFillColorSecondaryBrush);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tab-link:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+.tab-link.active {
+  color: var(--TextFillColorPrimaryBrush);
+  font-weight: 600;
+  position: relative;
+}
+
+#crudLink {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+#crudLink:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+  border-color: var(--ControlStrokeColorSecondaryBrush);
+}
+
+#crudLink {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  font-weight: 600;
+}
+
+.tab-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 15%;
+  right: 15%;
+  height: 3px;
+  background-color: var(--AccentFillColorDefaultBrush);
+  border-radius: 3px;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  margin-bottom: 32px;
+}
+
+.grid-form label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: -12px;
+}
+
+.btn-success {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--ControlFillColorDefaultBrush);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+}
+
+th {
+  text-align: left;
+  padding: 12px 16px;
+  background-color: var(--ControlFillColorSecondaryBrush);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--CardStrokeColorDefaultBrush);
+  font-size: 14px;
+}
+
+tr:hover td {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+.btn-edit {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  margin-right: 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.btn-delete {
+  color: var(--SystemFillColorCriticalBrush);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}

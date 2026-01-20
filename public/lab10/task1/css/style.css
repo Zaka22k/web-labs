@@ -1,0 +1,181 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlFillColorTertiaryBrush: hsl(0, 0%, 90%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorCautionBrush: hsl(36, 100%, 31%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#auth-container {
+  display: flex;
+  align-items: center;
+}
+
+#loginForm {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  padding: 5px 12px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  border-radius: 4px;
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  outline: none;
+  min-height: 32px;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+  padding-bottom: 4px;
+}
+
+button {
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  background-color: var(--ControlFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--ControlFillColorSecondaryBrush);
+}
+
+#loginForm button,
+.btn-primary {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+}
+
+#loginForm button:hover,
+.btn-primary:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+#loggedInContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+#loggedInUsername {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  font-weight: 600;
+}
+
+.nav-link,
+.orders-link,
+.cart-link,
+.admin-link {
+  color: var(--TextFillColorSecondaryBrush);
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.orders-link:hover,
+.cart-link:hover {
+  color: var(--AccentTextFillColorPrimaryBrush);
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.1s ease;
+}
+
+.product:hover {
+  filter: brightness(0.98);
+}
+
+.product h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--TextFillColorPrimaryBrush);
+}
+
+.product h3:hover {
+  color: var(--AccentTextFillColorPrimaryBrush);
+}
+
+.product p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+.product button {
+  margin-top: auto;
+  width: 100%;
+}
+
+.product button:disabled {
+  background-color: var(--ControlFillColorTertiaryBrush);
+  color: var(--TextFillColorTertiaryBrush);
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}

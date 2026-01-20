@@ -1,0 +1,97 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorSecondaryBrush: hsl(0, 0%, 80%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorSuccessBrush: hsl(120, 78%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  width: 300px;
+  padding: 6px 12px;
+  height: 32px;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 1px solid var(--ControlStrokeColorSecondaryBrush);
+  background: var(--ControlSolidFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: all 0.1s;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--AccentFillColorDefaultBrush);
+}
+
+input::placeholder {
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+button {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid var(--ControlElevationBorderBrush);
+  padding: 0 20px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+#result {
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 1.5em;
+  text-align: center;
+}
+
+.error {
+  color: var(--SystemFillColorCriticalBrush);
+}
+.success {
+  color: var(--SystemFillColorSuccessBrush);
+}

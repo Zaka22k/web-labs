@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Корзина</h1>
+        <a href="./" class="back-link">← Назад в магазин</a>
+      </div>
+      <div id="cart-items">
+        <div class="empty-cart">Корзина пуста</div>
+      </div>
+      <div class="total-section">
+        <h2 id="total">Итого: 0 ₽</h2>
+        <div class="actions">
+          <button class="btn-success" onclick="buy()">Купить</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/cart.js" defer></script>
+  </body>
+</html>

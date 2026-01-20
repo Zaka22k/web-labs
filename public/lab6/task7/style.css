@@ -1,0 +1,176 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --TextFillColorTertiaryBrush: hsl(0, 0%, 53%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --AccentFillColorTertiaryBrush: hsl(208, 61%, 49%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --SystemFillColorCriticalBrush: hsl(5, 75%, 44%);
+  --SystemFillColorCriticalBackgroundBrush: hsl(355, 85%, 95%);
+  --DividerStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+button {
+  background-color: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--AccentFillColorSecondaryBrush);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.link {
+  color: var(--AccentFillColorDefaultBrush);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.profile-count {
+  font-size: 13px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+.profile-card {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--ControlStrokeColorDefaultBrush);
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+  margin-bottom: 2px;
+}
+
+#saveProfileBtn {
+  margin-top: 12px;
+}
+
+#profilesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saved-profile-item {
+  background-color: var(--LayerFillColorAltBrush);
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.saved-profile-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.saved-info {
+  flex: 1;
+}
+
+.saved-info .name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.saved-info .details {
+  font-size: 12px;
+  color: var(--TextFillColorSecondaryBrush);
+}
+
+.delete-btn {
+  background-color: var(--SystemFillColorCriticalBackgroundBrush);
+  color: var(--SystemFillColorCriticalBrush);
+  border: none;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--TextFillColorTertiaryBrush);
+  padding: 40px;
+  font-size: 14px;
+}

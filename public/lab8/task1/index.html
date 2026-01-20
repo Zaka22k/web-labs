@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h1>Задание 1</h1>
+        <form id="userForm" class="form-grid">
+          <h2>Анкета</h2>
+          <div>
+            <label>Фамилия</label>
+            <input type="text" name="lastname" required />
+          </div>
+          <div>
+            <label>Имя</label>
+            <input type="text" name="firstname" required />
+          </div>
+          <div>
+            <label>Отчество</label>
+            <input type="text" name="surname" required />
+          </div>
+          <div>
+            <label>Пол</label>
+            <div class="radio-group">
+              <label
+                ><input type="radio" name="gender" value="male" required />
+                Мужской</label
+              >
+              <label
+                ><input type="radio" name="gender" value="female" />
+                Женский</label
+              >
+            </div>
+          </div>
+          <div>
+            <label>Факультет</label>
+            <select name="faculty" required>
+              <option value="">— Выберите —</option>
+              <option value="ФИТ">ФИТ</option>
+              <option value="ФЭТ">ФЭТ</option>
+              <option value="ФМ">ФМ</option>
+            </select>
+          </div>
+          <div class="checkbox-label">
+            <input type="checkbox" id="projectCheck" />
+            <label for="projectCheck">Участие в проекте</label>
+          </div>
+          <div id="projectNameGroup" class="hidden">
+            <label>Наименование проекта</label>
+            <input type="text" name="projectName" />
+          </div>
+          <button type="submit">Сохранить</button>
+        </form>
+      </section>
+
+      <section class="records-card">
+        <h2>Записанные данные</h2>
+        <div id="recordsList"></div>
+      </section>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

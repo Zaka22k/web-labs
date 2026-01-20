@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Управление пользователями</h1>
+
+      <div class="card">
+        <h2>Вход в систему</h2>
+
+        <div id="view-guest">
+          <p class="description-text">
+            Введите данные для входа. Если вы не авторизованы, вам доступен
+            только просмотр списка (имена).
+          </p>
+          <form id="form-login">
+            <div class="login-row">
+              <input
+                type="text"
+                id="login-input"
+                placeholder="Логин"
+                required
+              />
+              <input
+                type="password"
+                id="pass-input"
+                placeholder="Пароль"
+                required
+              />
+              <button type="submit" class="btn-primary">Войти</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="view-user" style="display: none">
+          <div class="user-info">
+            <span class="label">Вы вошли как:</span>
+            <strong id="user-display-login">User</strong>
+            <span class="label">Роль:</span>
+            <span id="user-display-role">USER</span>
+          </div>
+          <button id="btn-logout" class="btn-secondary">Выйти</button>
+        </div>
+
+        <div id="auth-msg" class="msg"></div>
+      </div>
+
+      <div id="admin-panel" class="card" style="display: none">
+        <h2 id="form-title">Создать нового пользователя</h2>
+
+        <form id="form-user-crud">
+          <input type="hidden" id="user-id-field" />
+          <div class="form-grid">
+            <div class="field-group">
+              <label>Логин</label>
+              <input type="text" id="crud-login" required />
+            </div>
+            <div id="password-group" class="field-group">
+              <label id="password-label">Пароль</label>
+              <input type="text" id="crud-password" />
+            </div>
+            <div class="field-group">
+              <label>Роль</label>
+              <select id="crud-role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="action-group">
+            <button type="submit" id="submit-button" class="btn-primary">
+              Создать
+            </button>
+            <button
+              type="button"
+              id="btn-generate-password"
+              class="btn-secondary"
+            >
+              Сгенерировать пароль
+            </button>
+            <button
+              type="button"
+              id="btn-cancel-edit"
+              class="btn-secondary"
+              style="display: none"
+            >
+              Отмена
+            </button>
+          </div>
+        </form>
+
+        <div id="crud-msg" class="msg"></div>
+      </div>
+
+      <div class="card">
+        <div class="header-with-action">
+          <h2>Список пользователей</h2>
+          <button id="btn-refresh" class="btn-secondary">
+            Обновить список
+          </button>
+        </div>
+        <div id="list-msg" class="msg"></div>
+        <div class="table-container">
+          <table id="users-table">
+            <thead></thead>
+            <tbody>
+              <tr>
+                <td>Загрузка...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

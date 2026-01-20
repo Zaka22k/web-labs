@@ -54,7 +54,7 @@ export default function Dashboard() {
           open={isOpen}
           isMobile={isMobile}
           onClose={() => setIsOpen(false)}
-          labs={data.labs}
+          labs={data?.labs || []}
         />
         <main
           className={styles.content}

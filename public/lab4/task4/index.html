@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Задание 4 — Мировые часы</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Мировые часы</h1>
+
+    <div class="controls">
+      <label for="citySelect">Фокус на городе:</label>
+      <select id="citySelect">
+        <option value="moscow" selected>Москва</option>
+        <option value="tokyo">Токио</option>
+        <option value="london">Лондон</option>
+        <option value="newyork">Нью-Йорк</option>
+        <option value="seattle">Сиэтл</option>
+      </select>
+    </div>
+
+    <div class="clocks" id="clocksContainer">
+      <div class="clock" id="moscow">
+        <div class="label">Москва</div>
+        <span class="time">--:--:--</span>
+      </div>
+      <div class="clock" id="tokyo">
+        <div class="label">Токио</div>
+        <span class="time">--:--:--</span>
+      </div>
+      <div class="clock" id="london">
+        <div class="label">Лондон</div>
+        <span class="time">--:--:--</span>
+      </div>
+      <div class="clock" id="newyork">
+        <div class="label">Нью-Йорк</div>
+        <span class="time">--:--:--</span>
+      </div>
+      <div class="clock" id="seattle">
+        <div class="label">Сиэтл</div>
+        <span class="time">--:--:--</span>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

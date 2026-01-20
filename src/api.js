@@ -54,7 +54,7 @@ class API {
   }
 
   async details() {
-    const res = await api.get(`/details`);
+    const res = await api.get(`data.json`);
     return res.data;
   }
 }

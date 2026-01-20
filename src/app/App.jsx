@@ -25,18 +25,16 @@ function App() {
                 <Route path="/" element={<ProtectedRoute protect={false} />} />
                 <Route path="/auth" element={<AuthPage />} />
 
-                <Route element={<ProtectedRoute />}>
-                  <Route
-                    path="/dashboard"
-                    element={
-                      <DataProvider>
-                        <Dashboard />
-                      </DataProvider>
-                    }
-                  >
-                    <Route index element={<HomePage />} />
-                    <Route path=":labId/:taskId" element={<TaskPage />} />
-                  </Route>
+                <Route
+                  path="/dashboard"
+                  element={
+                    <DataProvider>
+                      <Dashboard />
+                    </DataProvider>
+                  }
+                >
+                  <Route index element={<HomePage />} />
+                  <Route path=":labId/:taskId" element={<TaskPage />} />
                 </Route>
               </Routes>
             </Suspense>

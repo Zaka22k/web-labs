@@ -1,0 +1,33 @@
+:root {
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
+    sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  color: var(--AccentTextFillColorPrimaryBrush);
+  font-size: 72px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  min-width: 280px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 6 - Анкета</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Анкета участника</h2>
+
+      <form id="userForm">
+        <div>
+          <label>Фамилия</label>
+          <input type="text" name="Фамилия" required spellcheck="false" />
+        </div>
+
+        <div>
+          <label>Имя</label>
+          <input type="text" name="Имя" required spellcheck="false" />
+        </div>
+
+        <div>
+          <label>Отчество</label>
+          <input type="text" name="Отчество" spellcheck="false" />
+        </div>
+
+        <div>
+          <label>Пол</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="Пол" value="Мужской" required />
+              <span>Мужской</span>
+            </label>
+            <label>
+              <input type="radio" name="Пол" value="Женский" />
+              <span>Женский</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label>Факультет</label>
+          <select name="Факультет" required>
+            <option value="">Выберите факультет...</option>
+            <option>Факультет информатики</option>
+            <option>Факультет экономики</option>
+            <option>Факультет права</option>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="participate" id="participate" />
+            <span>Участие в проекте</span>
+          </label>
+        </div>
+
+        <div id="projectDiv" style="display: none">
+          <label>Наименование проекта</label>
+          <input type="text" name="Проект" />
+        </div>
+
+        <div class="buttons">
+          <button type="button" id="saveBtn">Сохранить</button>
+          <button type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

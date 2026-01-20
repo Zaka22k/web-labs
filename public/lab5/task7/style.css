@@ -1,0 +1,166 @@
+:root {
+  --TextFillColorPrimaryBrush: hsl(0, 0%, 10%);
+  --TextFillColorSecondaryBrush: hsl(0, 0%, 36%);
+  --AccentTextFillColorPrimaryBrush: hsl(215, 100%, 29%);
+  --TextOnAccentFillColorPrimaryBrush: hsl(0, 0%, 100%);
+  --ControlAltFillColorSecondaryBrush: hsl(0, 0%, 93%);
+  --ControlSolidFillColorDefaultBrush: hsl(0, 0%, 100%);
+  --SubtleFillColorSecondaryBrush: hsl(0, 0%, 92%);
+  --AccentFillColorDefaultBrush: hsl(208, 100%, 38%);
+  --AccentFillColorSecondaryBrush: hsl(208, 77%, 44%);
+  --CardStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --ControlStrokeColorDefaultBrush: hsl(0, 0%, 90%);
+  --LayerFillColorDefaultBrush: hsl(0, 0%, 98%);
+  --LayerFillColorAltBrush: hsl(0, 0%, 100%);
+  --ControlElevationBorderBrush: hsl(0, 0%, 90%);
+  --TextControlElevationBorderFocusedBrush: hsl(208, 100%, 38%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--LayerFillColorDefaultBrush);
+  color: var(--TextFillColorPrimaryBrush);
+  font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 1rem;
+  min-height: 100vh;
+}
+
+.multiplication-table {
+  width: 100%;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-size: 14px;
+  color: var(--TextFillColorSecondaryBrush);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input[type="number"] {
+  padding: 6px 12px;
+  background: var(--ControlSolidFillColorDefaultBrush);
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  border-bottom: 2px solid var(--ControlElevationBorderBrush);
+  border-radius: 4px;
+  outline: none;
+  width: 100px;
+  transition: all 0.2s;
+}
+
+input[type="number"]:focus {
+  border-bottom-color: var(--TextControlElevationBorderFocusedBrush);
+}
+
+button#createTable {
+  background: var(--AccentFillColorDefaultBrush);
+  color: var(--TextOnAccentFillColorPrimaryBrush);
+  border: none;
+  padding: 7px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+button#createTable:hover {
+  background: var(--AccentFillColorSecondaryBrush);
+}
+
+#tableContainer {
+  overflow-x: auto;
+  margin-top: 16px;
+  padding: 4px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 400px;
+  background: var(--LayerFillColorAltBrush);
+}
+
+td,
+th {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid var(--ControlStrokeColorDefaultBrush);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+th {
+  background: var(--ControlAltFillColorSecondaryBrush);
+  color: var(--TextFillColorSecondaryBrush);
+  font-weight: 600;
+}
+
+td:hover {
+  background: var(--SubtleFillColorSecondaryBrush);
+  color: var(--AccentFillColorDefaultBrush);
+  font-weight: 600;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: var(--LayerFillColorAltBrush);
+  margin: 15% auto;
+  padding: 24px;
+  border: 1px solid var(--CardStrokeColorDefaultBrush);
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  color: var(--TextFillColorSecondaryBrush);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#cellInfo {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--TextFillColorPrimaryBrush);
+}

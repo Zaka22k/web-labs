@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 9</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="orderForm" novalidate>
+      <h2>Оформление заказа</h2>
+
+      <div class="field-group">
+        <label for="login">Логин</label>
+        <input type="text" id="login" placeholder="От 5 до 20 символов" />
+        <span class="error-msg" id="loginError"></span>
+      </div>
+
+      <div class="field-group">
+        <label for="password">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="От 5 до 12 символов"
+        />
+        <span class="error-msg" id="passwordError"></span>
+      </div>
+
+      <div class="field-group">
+        <label for="confirmPassword">Повторите пароль</label>
+        <input type="password" id="confirmPassword" />
+        <span class="error-msg" id="confirmPasswordError"></span>
+      </div>
+
+      <div class="field-group">
+        <label for="age">Возраст</label>
+        <input type="number" id="age" min="1" max="120" />
+        <span class="error-msg" id="ageError"></span>
+      </div>
+
+      <div class="field-group">
+        <label for="city">Город</label>
+        <select id="city">
+          <option value="" disabled selected>Выберите город</option>
+          <option value="moscow">Москва</option>
+          <option value="spb">Санкт-Петербург</option>
+          <option value="other">Другой город</option>
+        </select>
+        <span class="error-msg" id="cityError"></span>
+      </div>
+
+      <label class="checkbox-group">
+        <input type="checkbox" id="delivery" />
+        Доставка курьером
+      </label>
+
+      <div class="field-group" id="addressLabel">
+        <label for="address">Адрес доставки</label>
+        <textarea
+          id="address"
+          rows="2"
+          placeholder="Улица, дом, квартира"
+        ></textarea>
+        <span class="error-msg" id="addressError"></span>
+      </div>
+
+      <button type="submit">Подтвердить заказ</button>
+    </form>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -20,14 +20,18 @@ export default function HomePage() {
         }}
       >
         <Profile
-          fullname={data.fullname}
-          group={data.group}
+          fullname={data?.fullname || "-"}
+          group={data?.group || "-"}
           onLinkClick={() => navigate("/dashboard/lab1/task10")}
         />
 
         <Progress labCount={labCount} />
 
-        <Scores sql={sql} python={python} updated_at={data.updated_at} />
+        <Scores
+          sql={sql}
+          python={python}
+          updated_at={data?.updated_at || "--.--.----"}
+        />
       </div>
     </PageTemplate>
   );
