@@ -17,44 +17,19 @@ api.interceptors.request.use((config) => {
 
 class API {
   async login(login, password) {
-    const res = await api.post(`/login`, { login, password });
-    const { access_token, refresh_token, msg } = res.data;
-
-    localStorage.setItem("access_token", access_token);
-    localStorage.setItem("refresh_token", refresh_token);
-    return { msg };
-  }
-
-  async refresh() {
-    const refresh_token = localStorage.getItem("refresh_token");
-    if (!refresh_token) throw new Error("Нет refresh токена");
-
-    try {
-      const res = await api.post("/refresh", null, {
-        headers: { Authorization: `Bearer ${refresh_token}` },
-      });
-      localStorage.setItem("access_token", res.data.access_token);
-      return res.data;
-    } catch (err) {
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("refresh_token");
-      throw err;
-    }
-  }
-
-  async logout() {
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("refresh_token");
-    return { success: true };
+    localStorage.setItem("access_token", "demo_token");
+    localStorage.setItem("refresh_token", "demo_refresh");
+    return { msg: "Успешный вход" };
   }
 
   async check() {
-    const res = await api.get(`/check`);
-    return res.data;
+    const token = localStorage.getItem("access_token");
+    if (!token) throw new Error("Не авторизован");
+    return { ok: true };
   }
 
   async details() {
-    const res = await api.get(`data.json`);
+    const res = await axios.get(`${import.meta.env.BASE_URL}data.json`);
     return res.data;
   }
 }

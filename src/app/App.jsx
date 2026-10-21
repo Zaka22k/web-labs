@@ -19,7 +19,7 @@ function App() {
             backgroundColor: tokens.colorNeutralBackground4,
           }}
         >
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<ProtectedRoute protect={false} />} />

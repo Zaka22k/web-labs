@@ -24,7 +24,7 @@ export default function TaskPage() {
       <div className={styles.container}>
         <iframe
           ref={iframeRef}
-          src={`/${labId}/${taskId}/index.html`}
+          src={`${import.meta.env.BASE_URL}${labId}/${taskId}/index.html`}
           className={styles.iframe}
           title={`${labId}-${taskId}`}
         />

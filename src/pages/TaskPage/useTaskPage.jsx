@@ -26,7 +26,11 @@ export default function useTaskPage() {
           if (/^https?:\/\//.test(href)) {
             e.preventDefault();
             window.open(href, "_blank");
-          } else if (href === "/" || href === "/index.html") {
+          } else if (
+            href === "/" ||
+            href === "/index.html" ||
+            href === import.meta.env.BASE_URL
+          ) {
             e.preventDefault();
             navigate("/dashboard");
           }
