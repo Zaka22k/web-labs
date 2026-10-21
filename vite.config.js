@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/web-labs/",
   resolve: {
     alias: {
       assets: path.resolve(__dirname, "./src/assets"),
